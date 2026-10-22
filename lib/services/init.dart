@@ -1,8 +1,7 @@
 import 'dart:developer';
 import 'package:get/instance_manager.dart';
-import 'package:vlr/controllers/dashboard_controller.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../controllers/auth_controller.dart';
+
 import '../controllers/permission_controller.dart';
 import '../data/api/api_client.dart';
 import '../data/repositories/auth_repo.dart';
@@ -26,10 +25,9 @@ class Init {
       Get.lazyPut(
           () => AuthRepo(sharedPreferences: Get.find(), apiClient: Get.find()));
       Get.lazyPut(() => BasicRepo(dioClient: Get.find()));
-
+   
       // Get Controller's...
-      Get.lazyPut(() => DashBoardController());
-      Get.lazyPut(() => AuthController(authRepo: Get.find()));
+    
     } catch (e) {
       log('---- ${e.toString()} ----', name: "ERROR AT initialize()");
     }

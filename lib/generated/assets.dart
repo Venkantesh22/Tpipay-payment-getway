@@ -5,6 +5,7 @@ class Assets {
   static const String imagesExclaim = 'assets/images/exclaim.png';
   static const String imagesLogo = 'assets/images/logo.png';
   static const String imagesPlaceholder = 'assets/images/placeholder.jpg';
+  static const String imagesNoProfile = 'assets/images/no-profile.png';
   static const String imagesShimmer = 'assets/images/shimmer.gif';
   static const String svgsHeartFilled = 'assets/svgs/heart_filled.svg';
   static const String svgsHeartOutline = 'assets/svgs/heart_outline.svg';
