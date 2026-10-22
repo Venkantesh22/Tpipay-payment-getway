@@ -76,15 +76,16 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
 
     return ToastificationWrapper(
       child: ScreenUtilInit(
-        designSize: Size(432.0, 960.0),
+        designSize: const Size(432.0, 960.0),
         minTextAdapt: true,
         // splitScreenMode: true,
         builder: (_, child) {
           return MaterialApp(
             title: AppConstants.appName,
             navigatorKey: navigatorKey,
-            themeMode: ThemeMode.light,
             theme: CustomTheme.light,
+            darkTheme: CustomTheme.dark,
+            themeMode: ThemeMode.system,
             debugShowCheckedModeBanner: false,
             home: child,
           );
