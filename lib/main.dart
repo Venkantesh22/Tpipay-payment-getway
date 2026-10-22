@@ -85,7 +85,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
             navigatorKey: navigatorKey,
             theme: CustomTheme.light,
             darkTheme: CustomTheme.dark,
-            themeMode: ThemeMode.system,
+            themeMode: ThemeMode.system,  
             debugShowCheckedModeBanner: false,
             home: child,
           );
