@@ -6,15 +6,15 @@ import 'package:vlr/services/constants.dart';
 import 'package:vlr/services/custom_text.dart';
 import 'package:vlr/services/theme.dart';
 
-class OptVerificationScreen extends StatefulWidget {
+class OtpVerificationScreen extends StatefulWidget {
   final String otpSendOn;
-  const OptVerificationScreen({super.key, required this.otpSendOn});
+  const OtpVerificationScreen({super.key, required this.otpSendOn});
 
   @override
-  State<OptVerificationScreen> createState() => _OptVerificationScreenState();
+  State<OtpVerificationScreen> createState() => _OtpVerificationScreenState();
 }
 
-class _OptVerificationScreenState extends State<OptVerificationScreen> {
+class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
   final TextEditingController _otpController = TextEditingController();
   int _secondsRemaining = 60;
   Timer? _timer;
