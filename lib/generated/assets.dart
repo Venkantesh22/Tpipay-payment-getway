@@ -50,10 +50,6 @@ class Assets {
   /// assets/svgs/email.svg
   static const String svgsEmail = "assets/svgs/email.svg";
 
-  /// Assets for svgsHome
-  /// assets/svgs/home.svg
-  static const String svgsHome = "assets/svgs/home.svg";
-
   /// Assets for svgsHomeSelect
   /// assets/svgs/home-select.svg
   static const String svgsHomeSelect = "assets/svgs/home-select.svg";
