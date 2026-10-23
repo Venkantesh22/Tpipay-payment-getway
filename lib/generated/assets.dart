@@ -38,6 +38,10 @@ class Assets {
   /// assets/images/splash-image-dart.png
   static const String imagesSplashImageDart = "assets/images/splash-image-dart.png";
 
+  /// Assets for svgsCompany
+  /// assets/svgs/company.svg
+  static const String svgsCompany = "assets/svgs/company.svg";
+
   /// Assets for svgsEmail
   /// assets/svgs/email.svg
   static const String svgsEmail = "assets/svgs/email.svg";
@@ -49,5 +53,13 @@ class Assets {
   /// Assets for svgsLock
   /// assets/svgs/lock.svg
   static const String svgsLock = "assets/svgs/lock.svg";
+
+  /// Assets for svgsPerson
+  /// assets/svgs/person.svg
+  static const String svgsPerson = "assets/svgs/person.svg";
+
+  /// Assets for svgsPhone
+  /// assets/svgs/phone.svg
+  static const String svgsPhone = "assets/svgs/phone.svg";
 }
 

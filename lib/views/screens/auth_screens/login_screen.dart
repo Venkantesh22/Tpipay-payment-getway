@@ -9,6 +9,7 @@ import 'package:vlr/services/custom_text.dart';
 import 'package:vlr/services/theme.dart';
 import 'package:vlr/views/base/custom_button.dart';
 import 'package:vlr/views/base/custom_image.dart';
+import 'package:vlr/views/screens/auth_screens/register_screen.dart';
 import 'package:vlr/views/widget/text_box/app_text_box.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -17,42 +18,51 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: Padding(
-        padding: AppConstants.screenPadding,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            CustomText(
-              "Don’t have an account?",
-              textAlign: TextAlign.center,
-              style: Helper(context)
-                  .textTheme
-                  .bodyMedium
-                  ?.copyWith(fontSize: 14.5.sp, color: greyDarkText),
-            ),
-            CustomButton(
-              onTap: () {},
-              type: ButtonType.tertiary,
-              child: Container(
-                decoration: BoxDecoration(
-                  border: Border(
-                    bottom: BorderSide(
-                      color: primaryColorText, // Set your desired color
+      bottomNavigationBar: GetBuilder<AuthController>(
+        builder: (authController) {
+          return Padding(
+            padding: AppConstants.screenPadding,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                CustomText(
+                  "Don’t have an account?",
+                  textAlign: TextAlign.center,
+                  style: Helper(context)
+                      .textTheme
+                      .bodyMedium
+                      ?.copyWith(fontSize: 14.5.sp, color: greyDarkText),
+                ),
+                CustomButton(
+                  onTap: () {
+                      if (authController.isLoading) {
+                        return showToast(message: "Please wait..");
+                      }
+                      navigate(context: context, page: const RegisterScreen());
+                  },
+                  type: ButtonType.tertiary,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      border: Border(
+                        bottom: BorderSide(
+                          color: primaryColorText, // Set your desired color
+                        ),
+                      ),
+                    ),
+                    child: CustomText(
+                      "Register Now",
+                      textAlign: TextAlign.center,
+                      style: Helper(context).textTheme.bodyLarge?.copyWith(
+                          fontSize: 14.5.sp,
+                          color: primaryColorText,
+                          textBaseline: TextBaseline.ideographic),
                     ),
                   ),
                 ),
-                child: CustomText(
-                  "Register Now",
-                  textAlign: TextAlign.center,
-                  style: Helper(context).textTheme.bodyLarge?.copyWith(
-                      fontSize: 14.5.sp,
-                      color: primaryColorText,
-                      textBaseline: TextBaseline.ideographic),
-                ),
-              ),
+              ],
             ),
-          ],
-        ),
+          );
+        }
       ),
       body: SingleChildScrollView(
         padding: AppConstants.screenPadding,
@@ -87,7 +97,6 @@ class LoginScreen extends StatelessWidget {
                 sizedBoxHeight(height: 32),
                 AppTextFieldWithHeading(
                   controller: authController.passwordController,
-                  obscureText: true,
                   preFixWidget: Padding(
                     padding: EdgeInsets.all(12.w),
                     child: SvgPicture.asset(Assets.svgsEmail),
@@ -113,6 +122,7 @@ class LoginScreen extends StatelessWidget {
                 sizedBoxHeight(height: 16),
                 AppTextFieldWithHeading(
                   controller: authController.emailController,
+                  obscureText: true,
                   preFixWidget: Padding(
                     padding: EdgeInsets.all(12.w),
                     child: SvgPicture.asset(Assets.svgsLock),
@@ -156,7 +166,7 @@ class LoginScreen extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: Helper(context)
                             .textTheme
-                            .bodyLarge
+                            .bodyMedium
                             ?.copyWith(fontSize: 16.sp, color: whiteTheme),
                       ),
                       sizedBoxWidth(width: 16),

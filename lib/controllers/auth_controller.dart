@@ -15,6 +15,7 @@ class AuthController extends GetxController implements GetxService {
 
   UserModel? _userModel;
 
+
   UserModel? get userModel => _userModel;
 
   bool get isLoading => _isLoading;
@@ -23,6 +24,11 @@ class AuthController extends GetxController implements GetxService {
 
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  TextEditingController firstNameController = TextEditingController();
+  TextEditingController lastNameController = TextEditingController();
+  TextEditingController companyNameController = TextEditingController();
+  TextEditingController mobileController = TextEditingController();
+  TextEditingController confirmPasswordController = TextEditingController();
 
   // Future<ResponseModel> generatedOtp({required String phone}) async {
   //   log('----------- generatedOtp Called ----------');

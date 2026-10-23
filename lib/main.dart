@@ -7,6 +7,7 @@ import 'package:vlr/services/theme.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'package:toastification/toastification.dart';
 import 'package:vlr/views/screens/auth_screens/login_screen.dart';
+import 'package:vlr/views/screens/auth_screens/register_screen.dart';
 
 import 'services/init.dart';
 import 'views/screens/splash_screen/splash_screen.dart';
@@ -92,7 +93,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
           );
         },
         // child: const SplashScreen(),
-        child: const LoginScreen(),
+        child: const RegisterScreen(),
       ),
     );
   }
