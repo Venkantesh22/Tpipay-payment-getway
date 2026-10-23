@@ -1,5 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vlr/services/custom_text.dart';
 
 import '../../../services/constants.dart';
 import '../../base/custom_image.dart';
@@ -97,35 +99,55 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    String image =  context.isDarkMode  ?   Assets.imagesSplashImageDart :  Assets.imagesSplachImage ;
     return Scaffold(
-      body: SizedBox(
-        width: size.width,
-        height: size.height,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+        body: Stack(
           children: [
-            const Spacer(),
-            CustomImage(
-              path: Assets.imagesLogoWobg,
-              height: size.height * .3,
-              width: size.height * .3,
+            Column(
+              children: [
+                sizedBoxHeight(height: MediaQuery.of(context).size.height / 4.8),
+                CustomImage(
+                  path: Assets.imagesLogoNameWobg,
+                  fit: BoxFit.cover,
+                  height: 100.h,
+                ),
+                sizedBoxHeight(height: 20),
+                CustomText(
+                  'Payments Made Easy\nfor Your Business',
+                  textAlign: TextAlign.center,
+                  overflow: TextOverflow.clip,
+                  style: Helper(context)
+                      .textTheme
+                      .bodyMedium
+                      ?.copyWith(fontSize: 19.sp),
+                ),
+                const Spacer(),
+                CustomImage(
+                  path: image,
+                  height:  MediaQuery.of(context).size.height / 2.5,
+                  width: double.infinity,
+                  fit: BoxFit.fitWidth,
+                ),
+                sizedBoxHeight(height: 30),
+                const CircularProgressIndicator(),
+                sizedBoxHeight(height: 50),
+              ],
             ),
-            const Spacer(flex: 3),
-            Text(
-              AppConstants.appName,
-              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                    fontSize: 26.0,
-                  ),
-            ),
-            Text(
-              "Subtitle",
-              style: Theme.of(context).textTheme.bodyMedium,
-            ),
-            const Spacer(),
+            // Positioned(
+            //   left: -20,
+            //   // You might want to adjust 'top' or 'bottom' here as well
+            //   // so it doesn't just sit at the very top of the stack
+            //   child: Container(
+            //     height: MediaQuery.of(context).size.height / 2,
+            //     width:
+            //         MediaQuery.of(context).size.height / 2, // <-- ADD WIDTH HERE
+            //     decoration: const BoxDecoration(
+            //       color: Colors.red,
+            //       shape: BoxShape.circle,
+            //     ),
+            //   ),
+            // )
           ],
-        ),
-      ),
-    );
+        ));
   }
 }

@@ -44,33 +44,33 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       controller.dashPage = 0;
                     },
                     title: 'Home',
-                    icon: Assets.svgsHomeOutline,
+                    icon: Assets.svgsHome,
                     isActive: controller.dashPage == 0 ? true : false,
                   ),
-                  BottomNavigationItemWidget(
-                    onTap: () {
-                      controller.dashPage = 1;
-                    },
-                    title: 'Projects',
-                    icon: Assets.svgsProjectsOutline,
-                    isActive: controller.dashPage == 0 ? true : false,
-                  ),
-                  BottomNavigationItemWidget(
-                    onTap: () {
-                      controller.dashPage = 2;
-                    },
-                    title: 'Favorites',
-                    icon: Assets.svgsHeartOutline,
-                    isActive: controller.dashPage == 0 ? true : false,
-                  ),
-                  BottomNavigationItemWidget(
-                    onTap: () {
-                      controller.dashPage = 3;
-                    },
-                    title: 'More',
-                    icon: Assets.svgsMoreOutline,
-                    isActive: controller.dashPage == 0 ? true : false,
-                  ),
+                  // BottomNavigationItemWidget(
+                  //   onTap: () {
+                  //     controller.dashPage = 1;
+                  //   },
+                  //   title: 'Projects',
+                  //   icon: Assets.svgsProjectsOutline,
+                  //   isActive: controller.dashPage == 0 ? true : false,
+                  // ),
+                  // BottomNavigationItemWidget(
+                  //   onTap: () {
+                  //     controller.dashPage = 2;
+                  //   },
+                  //   title: 'Favorites',
+                  //   icon: Assets.svgsHeartOutline,
+                  //   isActive: controller.dashPage == 0 ? true : false,
+                  // ),
+                  // BottomNavigationItemWidget(
+                  //   onTap: () {
+                  //     controller.dashPage = 3;
+                  //   },
+                  //   title: 'More',
+                  //   icon: Assets.svgsMoreOutline,
+                  //   isActive: controller.dashPage == 0 ? true : false,
+                  // ),
                 ],
               ),
             ),

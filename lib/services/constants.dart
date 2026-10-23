@@ -31,6 +31,32 @@ class PriceConverter {
   }
 }
 
+// =========================================================
+// GLOBAL THEME HELPERS
+// =========================================================
+
+extension AppGlobals on BuildContext {
+  // Current active Flutter theme
+  bool get isDarkMode =>
+      Theme.of(this).brightness == Brightness.dark;
+
+  bool get isLightMode => !isDarkMode;
+  
+
+  // Theme-aware colors
+  Color get primaryAppColor =>
+      Theme.of(this).colorScheme.primary;
+
+  Color get appBackgroundColor =>
+      Theme.of(this).scaffoldBackgroundColor;
+
+  Color get appTextColor =>
+      Theme.of(this).colorScheme.onSurface;
+
+  Color get appCardColor =>
+      Theme.of(this).cardColor;
+}
+
 Widget sizedBoxHeight({required double height}) {
   return SizedBox(
     height: height.h,
@@ -218,6 +244,9 @@ class AppConstants {
   static String appNameSecondHalf = '';
   
   static String appName = '$appNameFirstHalf $appNameSecondHalf';
+
+    static String subTitle = 'Payment Gateways';
+
 
   static const String dashboard = '/hrms/dashboard';
 

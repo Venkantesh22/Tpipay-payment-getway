@@ -46,7 +46,7 @@ Color get secondaryColor =>
 Color get backgroundLight => appBackground;
 
 Color get appBackground =>
-    _isDark ? const Color(0xFF100D25) : const Color(0xFFFAF9FD);
+    _isDark ? const Color(0xFF0C0D22) : const Color(0xFFFAF9FD);
 
 Color get surfaceColor =>
     _isDark ? const Color(0xFF19152F) : Colors.white;
@@ -360,7 +360,8 @@ class CustomTheme {
     final bool isDark = brightness == Brightness.dark;
 
     final Color background = isDark
-        ? const Color(0xFF100D25)
+        ? const Color(0xFF0C0D22)
+        // ? const Color(0xFF100D25)
         : const Color(0xFFFAF9FD);
 
     final Color surface = isDark
@@ -420,77 +421,77 @@ class CustomTheme {
     // ScreenUtil scales font sizes using the device's design size.
     final TextTheme textTheme = baseTextTheme.copyWith(
       displayLarge: GoogleFonts.montserrat(
-        fontSize: 32.sp,
+      
         fontWeight: FontWeight.w800,
         color: primaryText,
       ),
       displayMedium: GoogleFonts.montserrat(
-        fontSize: 28.sp,
+       
         fontWeight: FontWeight.w800,
         color: primaryText,
       ),
       displaySmall: GoogleFonts.montserrat(
-        fontSize: 24.sp,
+       
         fontWeight: FontWeight.w700,
         color: primaryText,
       ),
       headlineLarge: GoogleFonts.montserrat(
-        fontSize: 24.sp,
+       
         fontWeight: FontWeight.w800,
         color: primaryText,
       ),
       headlineMedium: GoogleFonts.montserrat(
-        fontSize: 21.sp,
+       
         fontWeight: FontWeight.w700,
         color: primaryText,
       ),
       headlineSmall: GoogleFonts.montserrat(
-        fontSize: 18.sp,
+        
         fontWeight: FontWeight.w700,
         color: primaryText,
       ),
+
       titleLarge: GoogleFonts.montserrat(
-        fontSize: 18.sp,
-        fontWeight: FontWeight.w700,
+        fontWeight: FontWeight.w900,
         color: primaryText,
       ),
       titleMedium: GoogleFonts.montserrat(
-        fontSize: 15.sp,
-        fontWeight: FontWeight.w600,
+        fontWeight: FontWeight.w800,
         color: primaryText,
       ),
       titleSmall: GoogleFonts.montserrat(
-        fontSize: 13.sp,
-        fontWeight: FontWeight.w600,
+       
+        fontWeight: FontWeight.w700,
         color: primaryText,
       ),
       bodyLarge: GoogleFonts.manrope(
-        fontSize: 16.sp,
+       
         fontWeight: FontWeight.w600,
         color: primaryText,
       ),
       bodyMedium: GoogleFonts.manrope(
-        fontSize: 14.sp,
+      
         fontWeight: FontWeight.w500,
         color: primaryText,
       ),
       bodySmall: GoogleFonts.manrope(
-        fontSize: 12.sp,
+       
         fontWeight: FontWeight.w400,
         color: secondaryTextColor,
       ),
+
       labelLarge: GoogleFonts.manrope(
-        fontSize: 14.sp,
+      
         fontWeight: FontWeight.w700,
         color: primaryText,
       ),
       labelMedium: GoogleFonts.manrope(
-        fontSize: 12.sp,
+       
         fontWeight: FontWeight.w600,
         color: secondaryTextColor,
       ),
       labelSmall: GoogleFonts.manrope(
-        fontSize: 11.sp,
+       
         fontWeight: FontWeight.w500,
         color: secondaryTextColor,
       ),

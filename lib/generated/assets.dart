@@ -29,5 +29,17 @@ class Assets {
   /// Assets for imagesShimmer
   /// assets/images/shimmer.gif
   static const String imagesShimmer = "assets/images/shimmer.gif";
+
+  /// Assets for imagesSplachImage
+  /// assets/images/splach-image.png
+  static const String imagesSplachImage = "assets/images/splach-image.png";
+
+  /// Assets for imagesSplashImageDart
+  /// assets/images/splash-image-dart.png
+  static const String imagesSplashImageDart = "assets/images/splash-image-dart.png";
+
+  /// Assets for svgsHome
+  /// assets/svgs/home.svg
+  static const String svgsHome = "assets/svgs/home.svg";
 }
 
