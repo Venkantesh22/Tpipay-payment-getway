@@ -99,7 +99,6 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    String image =  context.isDarkMode  ?   Assets.imagesSplashImageDart :  Assets.imagesSplachImage ;
     return Scaffold(
         body: Stack(
           children: [
