@@ -7,6 +7,7 @@ import 'package:vlr/services/theme.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'package:toastification/toastification.dart';
 import 'package:vlr/views/screens/auth_screens/login_screen.dart';
+import 'package:vlr/views/screens/auth_screens/opt_verification_screen.dart';
 import 'package:vlr/views/screens/auth_screens/register_screen.dart';
 
 import 'services/init.dart';
@@ -93,7 +94,8 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
           );
         },
         // child: const SplashScreen(),
-        child: const RegisterScreen(),
+        child: const OptVerificationScreen( otpSendOn: "1234567890",),
+        // child: const RegisterScreen(),
       ),
     );
   }
