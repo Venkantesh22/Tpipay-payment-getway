@@ -93,8 +93,8 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
             home: child,
           );
         },
-        child: const LoginScreen(),
-        // child: const SplashScreen(),
+        // child: const LoginScreen(),
+        child: const SplashScreen(),
         // child: const OtpVerificationScreen( otpSendOn: "1234567890",),
         // child: const RegisterScreen(),
       ),

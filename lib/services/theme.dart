@@ -60,8 +60,8 @@ Color get borderColor =>
 const Color black = Colors.black;
 const Color white = Colors.white;
 
-Color blackTheme = _isDark ? Colors.black : Colors.white;
-Color whiteTheme = _isDark ? Colors.white : Colors.black;
+Color blackTheme = _isDark ? white : black;
+Color whiteTheme = _isDark ? black : white;
 
 // =========================================================
 // TEXT COLORS

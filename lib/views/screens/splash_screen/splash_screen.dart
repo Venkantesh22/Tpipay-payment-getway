@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vlr/services/app_them_helper.dart';
 import 'package:vlr/services/custom_text.dart';
 import 'package:vlr/services/theme.dart';
+import 'package:vlr/views/screens/auth_screens/login_screen.dart';
 
 import '../../../services/constants.dart';
 import '../../base/custom_image.dart';
@@ -19,6 +20,21 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
+
+
+         Timer(const Duration(seconds: 2), () {
+        
+          // if (Get.find<SharedPreferences>().getBool(AppConstants.isFirstVisit) ?? true) {
+          //   Navigator.pushReplacement(
+          //     context,
+          //     getCustomRoute(
+          //       child: const IntroScreen(),
+          //     ),
+          //   );
+          // } else {
+            navigate(context: context, page: LoginScreen());
+          // }
+        });
 
 //    Get.find<BasicController>().fetchSettings().then((value) async {
 //       if (value.isSuccess) {
