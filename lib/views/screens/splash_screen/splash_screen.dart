@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vlr/services/custom_text.dart';
+import 'package:vlr/services/theme.dart';
 
 import '../../../services/constants.dart';
 import '../../base/custom_image.dart';
@@ -132,20 +133,45 @@ class _SplashScreenState extends State<SplashScreen> {
                 sizedBoxHeight(height: 50),
               ],
             ),
-            // Positioned(
-            //   left: -20,
-            //   // You might want to adjust 'top' or 'bottom' here as well
-            //   // so it doesn't just sit at the very top of the stack
-            //   child: Container(
-            //     height: MediaQuery.of(context).size.height / 2,
-            //     width:
-            //         MediaQuery.of(context).size.height / 2, // <-- ADD WIDTH HERE
-            //     decoration: const BoxDecoration(
-            //       color: Colors.red,
-            //       shape: BoxShape.circle,
-            //     ),
-            //   ),
-            // )
+            Positioned(
+              left: -260,
+             top:  -260,
+              child: Container(
+                height: MediaQuery.of(context).size.height / 2,
+                width:
+                    MediaQuery.of(context).size.height / 2, 
+                decoration:  BoxDecoration(
+                  color:   context.isDarkMode ? const Color(0xFF281D6E).withValues(alpha: 0.5) :  primaryColorWithTheme.withValues(alpha: 0.10),
+                  shape: BoxShape.circle,
+                ),
+              ),
+            ),
+            Positioned(
+              right: -100,
+             top:  -100,
+              child: Container(
+                height: MediaQuery.of(context).size.height / 3.5,
+                width:
+                    MediaQuery.of(context).size.height / 3.5, 
+                decoration:  BoxDecoration(
+                  color:   context.isDarkMode ? const Color(0xFF281D6E).withValues(alpha: 0.5) :  primaryColorWithTheme.withValues(alpha: 0.10),
+                  shape: BoxShape.circle,
+                ),
+              ),
+            ),
+            Positioned(
+              right: -400,
+             bottom:  -450,
+              child: Container(
+                height: MediaQuery.of(context).size.height / 1.5,
+                width:
+                    MediaQuery.of(context).size.height / 1.5, 
+                decoration:  BoxDecoration(
+                  color:   context.isDarkMode ? const Color(0xFF281D6E).withValues(alpha: 0.5) :  primaryColorWithTheme.withValues(alpha: 0.10),
+                  shape: BoxShape.circle,
+                ),
+              ),
+            )
           ],
         ));
   }
