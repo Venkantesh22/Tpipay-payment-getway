@@ -90,37 +90,16 @@ Color get blackText1 =>
 // =========================================================
 // GREY AND NEUTRAL COLORS
 // =========================================================
+ final  Color grey = Colors.grey;
+ final  Color greyDark = const Color.fromARGB(255, 105, 100, 100);
 
-Color get grey => _isDark ? const Color(0xFFA8A0BD) : const Color(0xFF999999);
+Color get greyTheme => _isDark ? const Color(0xFFA8A0BD) : const Color(0xFF999999);
 
-Color get grey1 => _isDark ? const Color(0xFF6D657F) : const Color(0xFF999999);
 
 Color get greyLight =>
     _isDark ? const Color(0xFF252038) : const Color(0xFFF6F3F9);
 
-Color get greyLight1 =>
-    _isDark ? const Color(0xFF20203B) : const Color(0xFFEFF6FF);
 
-Color get greyLight2 =>
-    _isDark ? const Color(0xFF393251) : const Color(0xFFC3C6D1);
-
-Color get greyLight3 =>
-    _isDark ? const Color(0xFF29313E) : const Color(0xFFEBE7E7);
-
-Color get greyLight4 =>
-    _isDark ? const Color(0xFF20203B) : const Color(0xFFF1F5F9);
-
-Color get greyLight5 =>
-    _isDark ? const Color(0xFFA8A0BD) : const Color(0xFF94A3B8);
-
-Color get greyLight6 =>
-    _isDark ? const Color(0xFF393251) : const Color(0xFFC3C6D7);
-
-Color get greyLight7 =>
-    _isDark ? const Color(0xFF202033) : const Color(0xFFF3F4F6);
-
-Color get greyLight8 =>
-    _isDark ? const Color(0xFFB9B2D0) : const Color(0xFF64748B);
 
 // =========================================================
 // PURPLE AND BLUE ACCENTS

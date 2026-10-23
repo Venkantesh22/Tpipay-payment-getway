@@ -55,18 +55,18 @@ class _AppPasswordTextBoxState extends State<AppPasswordTextBox> {
                       obscureText
                           ? Icons.visibility_sharp
                           : Icons.visibility_off_sharp,
-                      color: grey,
+                      color: greyTheme,
                       size: 20.sp,
                     ),
                   )
                 : const SizedBox(),
-            bgColor: grey.withValues(alpha: 0.1),
+            bgColor: greyTheme.withValues(alpha: 0.1),
             hintStyle: Helper(context).textTheme.bodyMedium?.copyWith(
                   fontSize: 13.sp,
                   fontWeight: FontWeight.w400,
                   color: greyText,
                 ),
-            borderColor: grey.withValues(alpha: 0.5),
+            borderColor: greyTheme.withValues(alpha: 0.5),
             hint: "Enter your password",
           ),
           validator: (value) {

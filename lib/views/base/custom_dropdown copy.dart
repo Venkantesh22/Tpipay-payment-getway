@@ -46,8 +46,8 @@ class CustomDropDownList<T> extends StatelessWidget {
     this.borderRadius = 12,
   });
 
-  Color get borderColorLocal => borderColor ?? grey.withValues(alpha: 0.5);
-  Color get bgColorLocal => bgColor ?? grey.withValues(alpha: 0.1);
+  Color get borderColorLocal => borderColor ?? greyTheme.withValues(alpha: 0.5);
+  Color get bgColorLocal => bgColor ?? greyTheme.withValues(alpha: 0.1);
 
   @override
   Widget build(BuildContext context) {

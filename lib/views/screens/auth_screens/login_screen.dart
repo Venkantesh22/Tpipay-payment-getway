@@ -10,6 +10,7 @@ import 'package:vlr/services/theme.dart';
 import 'package:vlr/views/base/custom_button.dart';
 import 'package:vlr/views/base/custom_image.dart';
 import 'package:vlr/views/screens/auth_screens/register_screen.dart';
+import 'package:vlr/views/screens/dashboard/dashboard_screen.dart';
 import 'package:vlr/views/widget/text_box/app_text_box.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -157,7 +158,12 @@ class LoginScreen extends StatelessWidget {
                   height: 65.h,
                   radius: 16.r,
                   gradient: buttonGradient,
-                  onTap: () {},
+                  onTap: () {
+                      if (authController.isLoading) {
+                        return showToast(message: "Please wait..");
+                      }
+                      navigate(context: context, page: const DashboardScreen());
+                  },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

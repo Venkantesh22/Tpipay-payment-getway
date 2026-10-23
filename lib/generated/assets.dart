@@ -38,6 +38,10 @@ class Assets {
   /// assets/images/splash-image-dart.png
   static const String imagesSplashImageDart = "assets/images/splash-image-dart.png";
 
+  /// Assets for svgsAction
+  /// assets/svgs/action.svg
+  static const String svgsAction = "assets/svgs/action.svg";
+
   /// Assets for svgsCompany
   /// assets/svgs/company.svg
   static const String svgsCompany = "assets/svgs/company.svg";
@@ -50,6 +54,10 @@ class Assets {
   /// assets/svgs/home.svg
   static const String svgsHome = "assets/svgs/home.svg";
 
+  /// Assets for svgsHomeSelect
+  /// assets/svgs/home-select.svg
+  static const String svgsHomeSelect = "assets/svgs/home-select.svg";
+
   /// Assets for svgsLock
   /// assets/svgs/lock.svg
   static const String svgsLock = "assets/svgs/lock.svg";
@@ -61,5 +69,13 @@ class Assets {
   /// Assets for svgsPhone
   /// assets/svgs/phone.svg
   static const String svgsPhone = "assets/svgs/phone.svg";
+
+  /// Assets for svgsService
+  /// assets/svgs/service.svg
+  static const String svgsService = "assets/svgs/service.svg";
+
+  /// Assets for svgsTransaction
+  /// assets/svgs/transaction.svg
+  static const String svgsTransaction = "assets/svgs/transaction.svg";
 }
 
