@@ -107,7 +107,7 @@ class _SplashScreenState extends State<SplashScreen> {
               children: [
                 sizedBoxHeight(height: MediaQuery.of(context).size.height / 4.8),
                 CustomImage(
-                  path: Assets.imagesLogoNameWobg,
+                  path: context.imageAppLogoWithName,
                   fit: BoxFit.cover,
                   height: 100.h,
                 ),
@@ -123,7 +123,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 ),
                 const Spacer(),
                 CustomImage(
-                  path: image,
+                  path: context.splashImage,
                   height:  MediaQuery.of(context).size.height / 2.5,
                   width: double.infinity,
                   fit: BoxFit.fitWidth,
