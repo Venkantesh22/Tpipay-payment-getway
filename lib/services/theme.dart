@@ -40,19 +40,16 @@ Color get whiteColorWithTheme => surfaceColor;
 Color get tertiaryColor =>
     _isDark ? const Color(0xFFB8A1FF) : const Color(0xFF6D28D9);
 
-Color get secondaryColor =>
-    _isDark ? const Color(0xFF342641) : lightPurple;
+Color get secondaryColor => _isDark ? const Color(0xFF342641) : lightPurple;
 
 Color get backgroundLight => appBackground;
 
 Color get appBackground =>
     _isDark ? const Color(0xFF0C0D22) : const Color(0xFFFAF9FD);
 
-Color get surfaceColor =>
-    _isDark ? const Color(0xFF19152F) : Colors.white;
+Color get surfaceColor => _isDark ? const Color(0xFF19152F) : Colors.white;
 
-Color get cardColor =>
-    _isDark ? const Color(0xFF211C3D) : Colors.white;
+Color get cardColor => _isDark ? const Color(0xFF211C3D) : Colors.white;
 
 Color get inputBackgroundColor =>
     _isDark ? const Color(0xFF211C3D) : const Color(0xFFFCFBFE);
@@ -60,56 +57,43 @@ Color get inputBackgroundColor =>
 Color get borderColor =>
     _isDark ? const Color(0xFF393251) : const Color(0xFFE7E1F0);
 
-Color get white => surfaceColor;
+const Color black = Colors.black;
+const Color white = Colors.white;
 
-Color get black => textPrimary;
-
-const Color actualBlack = Colors.black;
-const Color actualWhite = Colors.white;
+Color blackTheme = _isDark ? Colors.white : Colors.black;
+Color whiteTheme = _isDark ? Colors.black : Colors.white;
 
 // =========================================================
 // TEXT COLORS
 // =========================================================
 
-Color get textPrimary =>
-    _isDark ? const Color(0xFFF8F5FF) : navyColor;
+Color get textPrimary => _isDark ? const Color(0xFFF8F5FF) : navyColor;
+Color get primaryColorText => _isDark ? const Color(0xFFB832E8) : primaryColor;
 
 Color get textSecondary =>
     _isDark ? const Color(0xFFB9B2D0) : const Color(0xFF77728D);
 
-Color get greyDart2 =>
-    _isDark ? const Color(0xFFD0C9E5) : const Color(0xFF434654);
 
-Color get greyDart =>
-    _isDark ? const Color(0xFFB9B2D0) : const Color(0xFF737080);
-
-Color get greyDart3 =>
-    _isDark ? const Color(0xFFD0C9E5) : const Color(0xFF475569);
+Color get greyDarkText =>
+    _isDark ? const Color(0xFF9892BA) : const Color(0xFF687282);
 
 Color get greyText =>
-    _isDark ? const Color(0xFFB9B2D0) : const Color(0xFF625D75);
-
-Color get greyText2 => greyText;
+    _isDark ? const Color(0xFF94A3B8) : const Color(0xFF687282);
 
 Color get blackText1 =>
     _isDark ? const Color(0xFFE8E2F5) : const Color(0xFF334155);
 
-Color get blackText2 => textPrimary;
 
-Color get blackText3 => textPrimary;
 
-Color get blackText4 =>
-    _isDark ? const Color(0xFFE8E2F5) : const Color(0xFF1E293B);
+
 
 // =========================================================
 // GREY AND NEUTRAL COLORS
 // =========================================================
 
-Color get grey =>
-    _isDark ? const Color(0xFFA8A0BD) : const Color(0xFF999999);
+Color get grey => _isDark ? const Color(0xFFA8A0BD) : const Color(0xFF999999);
 
-Color get grey1 =>
-    _isDark ? const Color(0xFF6D657F) : const Color(0xFF999999);
+Color get grey1 => _isDark ? const Color(0xFF6D657F) : const Color(0xFF999999);
 
 Color get greyLight =>
     _isDark ? const Color(0xFF252038) : const Color(0xFFF6F3F9);
@@ -144,11 +128,9 @@ Color get greyLight8 =>
 
 Color get purple => primaryColor;
 
-Color get purpleLight =>
-    _isDark ? const Color(0xFF342641) : lightPurple;
+Color get purpleLight => _isDark ? const Color(0xFF342641) : lightPurple;
 
-Color get purple2 =>
-    _isDark ? accentPurple : const Color(0xFF9333EA);
+Color get purple2 => _isDark ? accentPurple : const Color(0xFF9333EA);
 
 Color get deepPurple =>
     _isDark ? const Color(0xFFC4A5E8) : const Color(0xFF6200A3);
@@ -172,11 +154,9 @@ Color get defaultColor => tertiaryColor;
 // Used by transaction details and account verification.
 // =========================================================
 
-Color get green =>
-    _isDark ? const Color(0xFF6EE7B7) : const Color(0xFF006C49);
+Color get green => _isDark ? const Color(0xFF6EE7B7) : const Color(0xFF006C49);
 
-Color get green2 =>
-    _isDark ? const Color(0xFF4ADE80) : const Color(0xFF0E9A41);
+Color get green2 => _isDark ? const Color(0xFF4ADE80) : const Color(0xFF0E9A41);
 
 Color get greenDark =>
     _isDark ? const Color(0xFF5EEAD4) : const Color(0xFF006A61);
@@ -191,18 +171,15 @@ Color get greenLight =>
 
 Color get greenLight1 => greenLight;
 
-Color get yellow =>
-    _isDark ? const Color(0xFFFBBF24) : const Color(0xFFF59E0B);
+Color get yellow => _isDark ? const Color(0xFFFBBF24) : const Color(0xFFF59E0B);
 
 Color get goldColor => const Color(0xFFFFB400);
 
 Color get organ => const Color(0xFFF97316);
 
-Color get red =>
-    _isDark ? const Color(0xFFFF8A80) : const Color(0xFFDC2626);
+Color get red => _isDark ? const Color(0xFFFF8A80) : const Color(0xFFDC2626);
 
-Color get red1 =>
-    _isDark ? const Color(0xFFFF8FAB) : const Color(0xFFE11D48);
+Color get red1 => _isDark ? const Color(0xFFFF8FAB) : const Color(0xFFE11D48);
 
 Color get redDark =>
     _isDark ? const Color(0xFFFF8A80) : const Color(0xFFBA1A1A);
@@ -217,9 +194,8 @@ Color get pinkLight2 =>
 // INPUT, DIVIDER AND SHIMMER COLORS
 // =========================================================
 
-Color get textBox => _isDark
-    ? const Color(0xFF29223D)
-    : primaryPurple.withValues(alpha: 0.05);
+Color get textBox =>
+    _isDark ? const Color(0xFF29223D) : primaryPurple.withValues(alpha: 0.05);
 
 Color get dividerColor =>
     _isDark ? const Color(0xFF393251) : const Color(0xFFE7E1F0);
@@ -239,6 +215,24 @@ Color get shimmerHighlight =>
 // =========================================================
 
 Color get containerBg => cardColor;
+
+// =========================================================
+// Button Linear Gradient
+// =========================================================
+LinearGradient buttonGradient = _isDark
+    ? const LinearGradient(
+        colors: [
+          Color(0xFF9C33F7),
+          Color(0xFF612EFB),
+        ],
+        begin: AlignmentGeometry.centerLeft,
+        end: AlignmentGeometry.centerRight,
+      )
+    : const LinearGradient(
+        colors: [Color(0xFF6B1CB0), Color(0xFF5213B3), Color(0xFF3A0B9E)],
+        begin: AlignmentGeometry.centerLeft,
+        end: AlignmentGeometry.centerRight,
+      );
 
 BoxDecoration get darkThemeContainerDecoration => BoxDecoration(
       color: containerBg,
@@ -364,29 +358,20 @@ class CustomTheme {
         // ? const Color(0xFF100D25)
         : const Color(0xFFFAF9FD);
 
-    final Color surface = isDark
-        ? const Color(0xFF19152F)
-        : Colors.white;
+    final Color surface = isDark ? const Color(0xFF19152F) : Colors.white;
 
-    final Color card = isDark
-        ? const Color(0xFF211C3D)
-        : Colors.white;
+    final Color card =
+        isDark ? const Color(0xFF211C3D) : const Color(0xFFFBFBFF);
 
-    final Color border = isDark
-        ? const Color(0xFF393251)
-        : const Color(0xFFE7E1F0);
+    final Color border =
+        isDark ? const Color(0xFF393251) : const Color(0xFFDFDEF2);
 
-    final Color primaryText = isDark
-        ? const Color(0xFFF8F5FF)
-        : navyColor;
+    final Color primaryText = isDark ? const Color(0xFFF8F5FF) : navyColor;
 
-    final Color secondaryTextColor = isDark
-        ? const Color(0xFFB9B2D0)
-        : const Color(0xFF77728D);
+    final Color secondaryTextColor =
+        isDark ? const Color(0xFFB9B2D0) : const Color(0xFF77728D);
 
-    final Color secondary = isDark
-        ? const Color(0xFF342641)
-        : lightPurple;
+    final Color secondary = isDark ? const Color(0xFF342641) : lightPurple;
 
     final ColorScheme scheme = ColorScheme.fromSeed(
       seedColor: primaryPurple,
@@ -396,9 +381,7 @@ class CustomTheme {
       onPrimary: Colors.white,
       secondary: isDark ? accentPurple : navyColor,
       onSecondary: Colors.white,
-      error: isDark
-          ? const Color(0xFFFF8A80)
-          : errorColor,
+      error: isDark ? const Color(0xFFFF8A80) : errorColor,
       onError: Colors.white,
       surface: surface,
       onSurface: primaryText,
@@ -421,36 +404,29 @@ class CustomTheme {
     // ScreenUtil scales font sizes using the device's design size.
     final TextTheme textTheme = baseTextTheme.copyWith(
       displayLarge: GoogleFonts.montserrat(
-      
         fontWeight: FontWeight.w800,
         color: primaryText,
       ),
       displayMedium: GoogleFonts.montserrat(
-       
         fontWeight: FontWeight.w800,
         color: primaryText,
       ),
       displaySmall: GoogleFonts.montserrat(
-       
         fontWeight: FontWeight.w700,
         color: primaryText,
       ),
       headlineLarge: GoogleFonts.montserrat(
-       
         fontWeight: FontWeight.w800,
         color: primaryText,
       ),
       headlineMedium: GoogleFonts.montserrat(
-       
         fontWeight: FontWeight.w700,
         color: primaryText,
       ),
       headlineSmall: GoogleFonts.montserrat(
-        
         fontWeight: FontWeight.w700,
         color: primaryText,
       ),
-
       titleLarge: GoogleFonts.montserrat(
         fontWeight: FontWeight.w900,
         color: primaryText,
@@ -460,38 +436,30 @@ class CustomTheme {
         color: primaryText,
       ),
       titleSmall: GoogleFonts.montserrat(
-       
         fontWeight: FontWeight.w700,
         color: primaryText,
       ),
       bodyLarge: GoogleFonts.manrope(
-       
         fontWeight: FontWeight.w600,
         color: primaryText,
       ),
       bodyMedium: GoogleFonts.manrope(
-      
         fontWeight: FontWeight.w500,
         color: primaryText,
       ),
       bodySmall: GoogleFonts.manrope(
-       
         fontWeight: FontWeight.w400,
         color: secondaryTextColor,
       ),
-
       labelLarge: GoogleFonts.manrope(
-      
         fontWeight: FontWeight.w700,
         color: primaryText,
       ),
       labelMedium: GoogleFonts.manrope(
-       
         fontWeight: FontWeight.w600,
         color: secondaryTextColor,
       ),
       labelSmall: GoogleFonts.manrope(
-       
         fontWeight: FontWeight.w500,
         color: secondaryTextColor,
       ),
@@ -545,8 +513,7 @@ class CustomTheme {
         ),
         systemOverlayStyle: SystemUiOverlayStyle(
           statusBarColor: surface,
-          statusBarIconBrightness:
-              isDark ? Brightness.light : Brightness.dark,
+          statusBarIconBrightness: isDark ? Brightness.light : Brightness.dark,
           statusBarBrightness: brightness,
           systemNavigationBarColor: surface,
           systemNavigationBarIconBrightness:
@@ -576,9 +543,7 @@ class CustomTheme {
       // Inputs, text fields and forms.
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
-        fillColor: isDark
-            ? const Color(0xFF211C3D)
-            : const Color(0xFFFCFBFE),
+        fillColor: isDark ? const Color(0xFF211C3D) : const Color(0xFFFCFBFE),
         hintStyle: textTheme.bodyMedium?.copyWith(
           color: secondaryTextColor,
           fontWeight: FontWeight.w400,
@@ -627,9 +592,8 @@ class CustomTheme {
         style: ElevatedButton.styleFrom(
           backgroundColor: primaryPurple,
           foregroundColor: Colors.white,
-          disabledBackgroundColor: isDark
-              ? const Color(0xFF393251)
-              : const Color(0xFFE7E1F0),
+          disabledBackgroundColor:
+              isDark ? const Color(0xFF393251) : const Color(0xFFE7E1F0),
           disabledForegroundColor: secondaryTextColor,
           elevation: 0,
           minimumSize: Size.fromHeight(52.h),
@@ -665,8 +629,7 @@ class CustomTheme {
       // Outlined buttons.
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
-          foregroundColor:
-              isDark ? accentPurple : primaryPurple,
+          foregroundColor: isDark ? accentPurple : primaryPurple,
           side: BorderSide(
             color: isDark ? accentPurple : primaryPurple,
           ),
@@ -685,8 +648,7 @@ class CustomTheme {
       // Text buttons.
       textButtonTheme: TextButtonThemeData(
         style: TextButton.styleFrom(
-          foregroundColor:
-              isDark ? accentPurple : primaryPurple,
+          foregroundColor: isDark ? accentPurple : primaryPurple,
           textStyle: textTheme.labelLarge,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10.r),
@@ -702,8 +664,7 @@ class CustomTheme {
       ),
 
       // Floating action buttons.
-      floatingActionButtonTheme:
-          const FloatingActionButtonThemeData(
+      floatingActionButtonTheme: const FloatingActionButtonThemeData(
         backgroundColor: primaryPurple,
         foregroundColor: Colors.white,
       ),
@@ -791,16 +752,13 @@ class CustomTheme {
         indicatorColor: primaryPurple.withValues(alpha: 0.13),
         elevation: 0,
         surfaceTintColor: Colors.transparent,
-        labelTextStyle:
-            WidgetStateProperty.resolveWith<TextStyle?>(
+        labelTextStyle: WidgetStateProperty.resolveWith<TextStyle?>(
           (states) {
-            final bool selected =
-                states.contains(WidgetState.selected);
+            final bool selected = states.contains(WidgetState.selected);
 
             return textTheme.labelSmall?.copyWith(
               color: selected ? primaryPurple : secondaryTextColor,
-              fontWeight:
-                  selected ? FontWeight.w700 : FontWeight.w500,
+              fontWeight: selected ? FontWeight.w700 : FontWeight.w500,
             );
           },
         ),
@@ -857,9 +815,7 @@ class CustomTheme {
 
       // Snack bars.
       snackBarTheme: SnackBarThemeData(
-        backgroundColor: isDark
-            ? const Color(0xFF302747)
-            : navyColor,
+        backgroundColor: isDark ? const Color(0xFF302747) : navyColor,
         contentTextStyle: GoogleFonts.manrope(
           color: Colors.white,
           fontSize: 13.sp,

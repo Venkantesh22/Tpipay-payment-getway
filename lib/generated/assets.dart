@@ -1,72 +1,53 @@
 // ignore_for_file: prefer_single_quotes
-import 'package:flutter/material.dart';
-
 class Assets {
   Assets._();
   
   /// Assets for imagesLogo
+  /// assets/images/logo.png
   static const String imagesLogo = "assets/images/logo.png";
 
   /// Assets for imagesLogoName
+  /// assets/images/logo-name.png
   static const String imagesLogoName = "assets/images/logo-name.png";
 
   /// Assets for imagesLogoNameWobg
+  /// assets/images/logo-name-wobg.png
   static const String imagesLogoNameWobg = "assets/images/logo-name-wobg.png";
 
   /// Assets for imagesLogoWobg
+  /// assets/images/logo-wobg.png
   static const String imagesLogoWobg = "assets/images/logo-wobg.png";
 
   /// Assets for imagesNoProfile
+  /// assets/images/no-profile.png
   static const String imagesNoProfile = "assets/images/no-profile.png";
 
   /// Assets for imagesPlaceholder
+  /// assets/images/placeholder.jpg
   static const String imagesPlaceholder = "assets/images/placeholder.jpg";
 
   /// Assets for imagesShimmer
+  /// assets/images/shimmer.gif
   static const String imagesShimmer = "assets/images/shimmer.gif";
 
   /// Assets for imagesSplachImage
+  /// assets/images/splach-image.png
   static const String imagesSplachImage = "assets/images/splach-image.png";
 
   /// Assets for imagesSplashImageDart
+  /// assets/images/splash-image-dart.png
   static const String imagesSplashImageDart = "assets/images/splash-image-dart.png";
 
+  /// Assets for svgsEmail
+  /// assets/svgs/email.svg
+  static const String svgsEmail = "assets/svgs/email.svg";
+
   /// Assets for svgsHome
+  /// assets/svgs/home.svg
   static const String svgsHome = "assets/svgs/home.svg";
-}
 
-// =========================================================
-// GLOBAL THEME HELPERS
-// =========================================================
-
-extension AppGlobals on BuildContext {
-  // Current active Flutter theme
-  bool get isDarkMode =>
-      Theme.of(this).brightness == Brightness.dark;
-
-  bool get isLightMode => !isDarkMode;
-
-  String get splashImage =>
-      isDarkMode ? Assets.imagesSplashImageDart : Assets.imagesSplachImage;
-
-  String get imageAppLogoWithName=>
-      isDarkMode ? Assets.imagesLogoNameWobg : Assets.imagesLogoNameWobg;
-
-  String get imageAppLogo=>
-      isDarkMode ? Assets.imagesLogoWobg : Assets.imagesLogoWobg;
- 
-
-  // Theme-aware colors
-  Color get primaryAppColor =>
-      Theme.of(this).colorScheme.primary;
-
-  Color get appBackgroundColor =>
-      Theme.of(this).scaffoldBackgroundColor;
-
-  Color get appTextColor =>
-      Theme.of(this).colorScheme.onSurface;
-
-  Color get appCardColor =>
-      Theme.of(this).cardColor;
+  /// Assets for svgsLock
+  /// assets/svgs/lock.svg
+  static const String svgsLock = "assets/svgs/lock.svg";
 }
 
