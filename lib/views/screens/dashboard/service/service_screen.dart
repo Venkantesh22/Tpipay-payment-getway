@@ -40,6 +40,7 @@ class ServiceScreen extends StatelessWidget {
                 shrinkWrap: true,
                 physics: const BouncingScrollPhysics(),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  childAspectRatio: 1.1,
                   crossAxisCount: 2,
                   crossAxisSpacing:
                       14.w, 

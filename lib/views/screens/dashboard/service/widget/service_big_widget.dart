@@ -28,9 +28,10 @@ class ServiceBigWidget extends StatelessWidget {
                 index: index,
                 showName: false,
               ),
-              const Icon(
+               Icon(
                 Icons.arrow_forward_ios_rounded,
                 color: grey,
+                size: 20.sp,
               )
             ],
           ),
