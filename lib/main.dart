@@ -9,6 +9,7 @@ import 'package:toastification/toastification.dart';
 import 'package:vlr/views/screens/auth_screens/login_screen.dart';
 import 'package:vlr/views/screens/auth_screens/opt_verification_screen.dart';
 import 'package:vlr/views/screens/auth_screens/register_screen.dart';
+import 'package:vlr/views/screens/dashboard/dashboard_screen.dart';
 
 import 'services/init.dart';
 import 'views/screens/splash_screen/splash_screen.dart';
@@ -94,7 +95,8 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
           );
         },
         // child: const LoginScreen(),
-        child: const SplashScreen(),
+        child: const DashboardScreen(),
+        // child: const SplashScreen(),
         // child: const OtpVerificationScreen( otpSendOn: "1234567890",),
         // child: const RegisterScreen(),
       ),

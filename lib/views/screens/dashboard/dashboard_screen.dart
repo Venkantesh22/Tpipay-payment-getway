@@ -26,15 +26,12 @@ class _DashboardScreenState extends State<DashboardScreen> {
     return Scaffold(
       body: GetBuilder<DashBoardController>(
         builder: (DashBoardController controller) {
-          return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-            child: [
-              HomeScreen(),
-              ServiceScreen(),
-              TransactionsScreen(),
-              ActionScreen()
-            ][controller.dashPage],
-          );
+          return [
+            HomeScreen(),
+            ServiceScreen(),
+            TransactionsScreen(),
+            ActionScreen()
+          ][controller.dashPage];
         },
       ),
     bottomNavigationBar: GetBuilder<DashBoardController>(
