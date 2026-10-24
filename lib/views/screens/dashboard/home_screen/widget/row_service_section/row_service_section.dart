@@ -7,6 +7,7 @@ import 'package:vlr/services/constants.dart';
 import 'package:vlr/services/custom_text.dart';
 import 'package:vlr/services/theme.dart';
 import 'package:vlr/views/base/custom_image.dart';
+import 'package:vlr/views/screens/dashboard/home_screen/widget/row_service_section/service_widget.dart';
 import 'package:vlr/views/widget/view_all_widget/view_all_widget.dart';
 
 class RowOfServiceSection extends StatelessWidget {
@@ -40,33 +41,7 @@ class RowOfServiceSection extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               physics: const NeverScrollableScrollPhysics(),
               itemBuilder: (context, index) {
-                return Column(
-                  children: [
-                    Container(
-                      height: 64.h,
-                      width: 64.w,
-                      padding: EdgeInsets.all(16.w),
-                      decoration: serviceContainerDecoration(index: index),
-                      child: SvgPicture.asset(
-                        Assets.svgsDynamicQr,
-                        colorFilter: ColorFilter.mode(
-                          serviceAccentColor(index),
-                          BlendMode.srcIn,
-                        ),
-                      ),
-                    ),
-                    sizedBoxHeight(height: 5),
-                    CustomText(
-                      "Dynamic Qr",
-                      maxLines: 2,
-                      overflow: TextOverflow.clip,
-                      style: Helper(context)
-                          .textTheme
-                          .bodyMedium
-                          ?.copyWith(fontSize: 14.sp),
-                    )
-                  ],
-                );
+                return ServiceWidget(index: index);
               },
               separatorBuilder: (_, __) => sizedBoxWidth(width: 26),
               itemCount: 10),
