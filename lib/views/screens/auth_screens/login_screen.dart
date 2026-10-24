@@ -173,12 +173,12 @@ class LoginScreen extends StatelessWidget {
                         style: Helper(context)
                             .textTheme
                             .bodyMedium
-                            ?.copyWith(fontSize: 16.sp, color: whiteTheme),
+                            ?.copyWith(fontSize: 16.sp, ),
                       ),
                       sizedBoxWidth(width: 16),
-                      Icon(
+                     const  Icon(
                         Icons.arrow_forward,
-                        color: whiteTheme,
+                        
                       )
                     ],
                   ),
