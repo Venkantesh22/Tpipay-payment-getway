@@ -42,7 +42,7 @@ class RecentTransactionsSection extends StatelessWidget {
               return const TransactionShotWidget();
             },
             separatorBuilder: (_, __) {
-              return sizedBoxHeight(height: 24.h);
+              return sizedBoxHeight(height: 26.h);
             },
             itemCount: 10)
       ],

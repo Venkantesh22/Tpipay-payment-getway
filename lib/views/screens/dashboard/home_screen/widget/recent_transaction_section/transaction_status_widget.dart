@@ -13,6 +13,7 @@ enum TransactionStatus {
 
 class TransactionStatusWidget extends StatelessWidget {
   final TransactionStatus status;
+
   const TransactionStatusWidget({
     super.key,
     required this.status,
@@ -23,79 +24,75 @@ class TransactionStatusWidget extends StatelessWidget {
     switch (status) {
       case TransactionStatus.success:
         return _successTransaction(context);
+
       case TransactionStatus.pending:
         return _pendingTransaction(context);
+
       case TransactionStatus.fail:
         return _failedTransaction(context);
+
       case TransactionStatus.refund:
         return _refundTransaction(context);
-
     }
   }
 
-  Container _successTransaction(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(vertical: 2.h, horizontal: 8.w),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(6.r),
-        color: successColor.withValues(alpha: 0.2),
-      ),
-      child: CustomText(
-        "Success",
-        style: Helper(context).textTheme.titleSmall?.copyWith(
-              fontSize: 10.sp,
-              color: successColor,
-            ),
-      ),
+  Widget _successTransaction(BuildContext context) {
+    return _buildStatus(
+      context,
+      title: "Success",
+      color: successColor,
     );
   }
+
   Widget _pendingTransaction(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(vertical: 2.h, horizontal: 8.w),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(6.r),
-        color: warningColor.withValues(alpha: 0.2),
-      ),
-      child: CustomText(
-        "Pending",
-        style: Helper(context).textTheme.titleSmall?.copyWith(
-              fontSize: 10.sp,
-              color: warningColor,
-            ),
-      ),
+    return _buildStatus(
+      context,
+      title: "Pending",
+      color: warningColor,
     );
   }
+
   Widget _failedTransaction(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(vertical: 2.h, horizontal: 8.w),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(6.r),
-        color: errorColor.withValues(alpha: 0.2),
-      ),
-      child: CustomText(
-        "Failed",
-        style: Helper(context).textTheme.titleSmall?.copyWith(
-              fontSize: 10.sp,
-              color: errorColor,
-            ),
-      ),
+    return _buildStatus(
+      context,
+      title: "Failed",
+      color: errorColor,
     );
   }
+
   Widget _refundTransaction(BuildContext context) {
+    return _buildStatus(
+      context,
+      title: "Refund",
+      color: refundColor,
+    );
+  }
+
+  Widget _buildStatus(
+    BuildContext context, {
+    required String title,
+    required Color color,
+  }) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 2.h, horizontal: 8.w),
+      padding: EdgeInsets.symmetric(
+        vertical: 2.h,
+        horizontal: 8.w,
+      ),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(6.r),
-        color: refundColor.withValues(alpha: 0.2),
+        borderRadius: BorderRadius.circular(20.r),
+        color: color.withValues(alpha: 0.1),
+        border: Border.all(
+          width: 1,
+          color: color.withValues(alpha: 0.3),
+        ),
       ),
       child: CustomText(
-        "Refund",
+        title,
         style: Helper(context).textTheme.titleSmall?.copyWith(
               fontSize: 10.sp,
-              color: refundColor,
+              color: color,
             ),
       ),
     );
   }
-    
 }
