@@ -4,6 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vlr/controllers/auth_controller.dart';
 import 'package:vlr/controllers/basic_controller.dart';
 import 'package:vlr/controllers/dashboard_controller.dart';
+import 'package:vlr/controllers/transaction_controller.dart';
 
 import '../controllers/permission_controller.dart';
 import '../data/api/api_client.dart';
@@ -37,6 +38,10 @@ class Init {
           () => DashBoardController());
       Get.lazyPut(
           () => BasicController(basicRepo: Get.find()));
+      Get.lazyPut(
+          () => TransactionController(
+            // basicRepo: Get.find()
+          ));
     
     } catch (e) {
       log('---- ${e.toString()} ----', name: "ERROR AT initialize()");
