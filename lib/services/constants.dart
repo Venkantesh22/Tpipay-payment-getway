@@ -7,7 +7,6 @@ import 'package:vlr/main.dart';
 import 'package:vlr/services/route_helper.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:toastification/toastification.dart';
-import 'package:vlr/services/theme.dart';
 
 class PriceConverter {
   static String convert(dynamic price) {

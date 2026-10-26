@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:vlr/controllers/dashboard_controller.dart';
 import 'package:vlr/services/constants.dart';
 import 'package:vlr/services/custom_text.dart';
-import 'package:vlr/services/theme.dart';
-import 'package:vlr/views/base/custom_image.dart';
 import 'package:vlr/views/screens/dashboard/home_screen/widget/row_service_section/service_widget.dart';
 import 'package:vlr/views/widget/view_all_widget/view_all_widget.dart';
 

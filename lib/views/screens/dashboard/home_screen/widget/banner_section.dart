@@ -43,7 +43,7 @@ class _HomeBannerState extends State<HomeBanner> {
                       width: MediaQuery.sizeOf(context).width,
                       path: basicController.isLoading
                           ? ""
-                          : basicController.sliders[index] ?? "",
+                          : basicController.sliders[index],
                       fit: BoxFit.cover,
                     ),
                   ),
