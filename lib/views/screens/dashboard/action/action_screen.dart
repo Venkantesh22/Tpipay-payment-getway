@@ -5,6 +5,7 @@ import 'package:vlr/services/custom_text.dart';
 import 'package:vlr/services/theme.dart';
 import 'package:vlr/views/base/custom_button.dart';
 import 'package:vlr/views/screens/dashboard/action/widget/account_section.dart';
+import 'package:vlr/views/screens/dashboard/action/widget/heading_text_widget.dart';
 import 'package:vlr/views/screens/dashboard/action/widget/profile_info_section.dart';
 import 'package:vlr/views/screens/dashboard/action/widget/supper_section.dart';
 import 'package:vlr/views/screens/dashboard/home_screen/widget/appbar_widget.dart';
@@ -23,11 +24,11 @@ class ActionScreen extends StatelessWidget {
             children: [
               const ProfileInfoSection(),
               sizedBoxHeight(height: 18),
-              headingText(context, "Account & Verification"),
+              const HeadingTextWidget(title: "Account & Verification"),
               sizedBoxHeight(height: 8),
               const AccountSection(),
               sizedBoxHeight(height: 18),
-              headingText(context, "Support & Legal"),
+              const HeadingTextWidget(title: "Support & Legal"),
               sizedBoxHeight(height: 8),
               const SupperSection(),
               sizedBoxHeight(height: 18),
@@ -58,15 +59,5 @@ class ActionScreen extends StatelessWidget {
             ],
           ),
         ));
-  }
-
-  CustomText headingText(BuildContext context, String title) {
-    return CustomText(
-      title,
-      overflow: TextOverflow.clip,
-      style: Helper(context).textTheme.titleSmall?.copyWith(
-            fontSize: 15.sp,
-          ),
-    );
   }
 }
