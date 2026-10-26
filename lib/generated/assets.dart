@@ -50,9 +50,21 @@ class Assets {
   /// assets/svgs/action.svg
   static const String svgsAction = "assets/svgs/action.svg";
 
+  /// Assets for svgsBank
+  /// assets/svgs/bank.svg
+  static const String svgsBank = "assets/svgs/bank.svg";
+
+  /// Assets for svgsBusiness
+  /// assets/svgs/business.svg
+  static const String svgsBusiness = "assets/svgs/business.svg";
+
   /// Assets for svgsCompany
   /// assets/svgs/company.svg
   static const String svgsCompany = "assets/svgs/company.svg";
+
+  /// Assets for svgsDocment
+  /// assets/svgs/docment.svg
+  static const String svgsDocment = "assets/svgs/docment.svg";
 
   /// Assets for svgsDynamicQr
   /// assets/svgs/dynamic-qr.svg
@@ -65,6 +77,10 @@ class Assets {
   /// Assets for svgsHomeSelect
   /// assets/svgs/home-select.svg
   static const String svgsHomeSelect = "assets/svgs/home-select.svg";
+
+  /// Assets for svgsKyc
+  /// assets/svgs/kyc.svg
+  static const String svgsKyc = "assets/svgs/kyc.svg";
 
   /// Assets for svgsLock
   /// assets/svgs/lock.svg

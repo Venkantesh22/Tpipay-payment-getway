@@ -25,6 +25,7 @@ class CustomButton extends StatelessWidget {
     this.fontSize = 16,
     this.textStyle,
     this.borderWidth,
+    this.borderColor,
 
     // Gradient
     this.gradient,
@@ -51,6 +52,7 @@ class CustomButton extends StatelessWidget {
     this.fontSize,
     this.textStyle,
     this.borderWidth,
+    this.borderColor,
 
     // Gradient
     this.gradient,
@@ -77,6 +79,7 @@ class CustomButton extends StatelessWidget {
   final TextStyle? textStyle;
 
   final Gradient? gradient;
+  final Color? borderColor;
   // final AlignmentGeometry gradientBegin;
   // final AlignmentGeometry gradientEnd;
 
@@ -130,9 +133,8 @@ class CustomButton extends StatelessWidget {
   }
 
   Widget _buildSecondaryButton(BuildContext context) {
-    final BorderSide borderSide = BorderSide(
-      width: borderWidth ?? 1,
-    );
+    final BorderSide borderSide =
+        BorderSide(width: borderWidth ?? 1, color: borderColor ?? black);
 
     return Material(
       color: Colors.transparent,

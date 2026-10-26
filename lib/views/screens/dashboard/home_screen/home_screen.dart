@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
             sizedBoxHeight(height: 16),
             const RowOfServiceSection(),
             sizedBoxHeight(height: 16),
-            RecentTransactionsSection()
+            const RecentTransactionsSection()
           ],
         ),
       ),
