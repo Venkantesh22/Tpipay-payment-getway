@@ -28,7 +28,7 @@ class ProfileScreen extends StatelessWidget {
             sizedBoxHeight(height: 18),
             const HeadingTextWidget(title: "Account & Verification"),
             sizedBoxHeight(height: 8),
-            AccountInfoSection()
+            const AccountInfoSection()
           ],
         ),
       ),

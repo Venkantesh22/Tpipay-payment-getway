@@ -126,3 +126,64 @@ List<AccountInfoWidgetModel> accountInfoWidgetModelList(BuildContext context) =>
         ),
       ),
     ];
+
+List<AccountInfoWidgetModel> accountInfoUpdateWidgetModelList(
+        BuildContext context) =>
+    [
+      AccountInfoWidgetModel(
+          iconData: Icons.person_outline,
+          title: "Full Name",
+          subTitle: "Rahul Patra"),
+      AccountInfoWidgetModel(
+          iconData: Icons.email_outlined,
+          title: "Email",
+          subTitle: "rahul@example.com"),
+      AccountInfoWidgetModel(
+          iconData: Icons.phone_outlined,
+          title: "Mobile Number",
+          subTitle: "+91 98765 43210"),
+      AccountInfoWidgetModel(
+          iconData: Icons.business,
+          title: "Company Name",
+          subTitle: "Patra Enterprises  "),
+      AccountInfoWidgetModel(
+          iconData: Icons.credit_card,
+          title: "Merchant ID",
+          subTitle: "TPIPAY123456"),
+      AccountInfoWidgetModel(
+        iconData: Icons.security,
+        title: "KYC Status",
+        lastWidget: Container(
+          padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 12.w),
+          decoration: BoxDecoration(
+              color: context.green.withValues(alpha: 0.10),
+              borderRadius: BorderRadius.circular(12.r)),
+          child: CustomText(
+            "Verified",
+            overflow: TextOverflow.clip,
+            style: Helper(context)
+                .textTheme
+                .bodyLarge
+                ?.copyWith(fontSize: 12.sp, color: context.green),
+          ),
+        ),
+      ),
+      AccountInfoWidgetModel(
+        iconData: Icons.manage_accounts,
+        title: "Account Status",
+        lastWidget: Container(
+          padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 12.w),
+          decoration: BoxDecoration(
+              color: context.green.withValues(alpha: 0.10),
+              borderRadius: BorderRadius.circular(12.r)),
+          child: CustomText(
+            "Active",
+            overflow: TextOverflow.clip,
+            style: Helper(context)
+                .textTheme
+                .bodyLarge
+                ?.copyWith(fontSize: 12.sp, color: context.green),
+          ),
+        ),
+      ),
+    ];

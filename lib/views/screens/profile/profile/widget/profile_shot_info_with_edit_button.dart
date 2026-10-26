@@ -7,6 +7,7 @@ import 'package:vlr/services/custom_text.dart';
 import 'package:vlr/services/theme.dart';
 import 'package:vlr/views/base/custom_button.dart';
 import 'package:vlr/views/base/custom_image.dart';
+import 'package:vlr/views/screens/profile/edit_profile/edit_profile_screen.dart';
 
 class ProfileShortInfoWithEditButton extends StatelessWidget {
   const ProfileShortInfoWithEditButton({
@@ -53,7 +54,17 @@ class ProfileShortInfoWithEditButton extends StatelessWidget {
                       child: CustomButton(
                         type: ButtonType.secondary,
                         borderColor: context.primaryColorText,
-                        onTap: () {},
+                        onTap: () {
+                          if (authController.isLoading) {
+                            return showToast(
+                                message: "Please wait..",
+                                toastType: ToastType.info);
+                          }
+                          navigate(
+                            context: context,
+                            page: const EditProfileScreen(),
+                          );
+                        },
                         radius: 100.r,
                         child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 12),
