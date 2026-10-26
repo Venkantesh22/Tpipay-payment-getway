@@ -1,16 +1,15 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vlr/services/app_them_helper.dart';
 import 'package:vlr/services/constants.dart';
 import 'package:vlr/views/base/custom_image.dart';
 
-class AppbarWidget extends StatelessWidget implements PreferredSizeWidget {
-  const AppbarWidget({
+class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
+  const AppBarWidget({
     super.key,
   });
 
-@override
+  @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 
   @override

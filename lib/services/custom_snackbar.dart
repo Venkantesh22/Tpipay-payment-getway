@@ -23,9 +23,9 @@ class ScaffoldSnackBar {
                   fontWeight: FontWeight.w600,
                 ),
           ),
-          // backgroundColor: Theme.of(_context).primaryColor.withOpacity(.8),
+          // backgroundColor: Theme.of(_context).context.primaryColor.withOpacity(.8),
           elevation: 0,
-          padding:  EdgeInsets.symmetric(vertical: 20.h, horizontal: 30.w),
+          padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 30.w),
           behavior: SnackBarBehavior.fixed,
         ),
       );

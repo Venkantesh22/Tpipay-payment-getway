@@ -5,6 +5,7 @@ import 'package:vlr/controllers/basic_controller.dart';
 
 import '../../../../../services/theme.dart';
 import '../../../../base/custom_image.dart';
+
 import '../../../../base/shimmer.dart';
 
 // ignore: must_be_immutable
@@ -102,7 +103,7 @@ class BannerIndicatorWidget extends StatelessWidget {
       width: isActive ? 12 : 8,
       height: isActive ? 12 : 8,
       decoration: BoxDecoration(
-        color: isActive ? primaryColor : grey,
+        color: isActive ? context.primaryColor : grey,
         shape: BoxShape.circle,
       ),
       duration: const Duration(milliseconds: 700),

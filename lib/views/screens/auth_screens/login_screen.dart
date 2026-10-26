@@ -19,52 +19,52 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: GetBuilder<AuthController>(
-        builder: (authController) {
-          return Padding(
-            padding: AppConstants.screenPadding,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                CustomText(
-                  "Don’t have an account?",
-                  textAlign: TextAlign.center,
-                  style: Helper(context)
-                      .textTheme
-                      .bodyMedium
-                      ?.copyWith(fontSize: 14.5.sp, color: greyDarkText),
-                ),
-                CustomButton(
-                  onTap: () {
-                      if (authController.isLoading) {
-                        return showToast(message: "Please wait..");
-                      }
-                      navigate(context: context, page: const RegisterScreen());
-                  },
-                  type: ButtonType.tertiary,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      border: Border(
-                        bottom: BorderSide(
-                          color: primaryColorText, // Set your desired color
-                        ),
+      bottomNavigationBar:
+          GetBuilder<AuthController>(builder: (authController) {
+        return Padding(
+          padding: AppConstants.screenPadding,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              CustomText(
+                "Don’t have an account?",
+                textAlign: TextAlign.center,
+                style: Helper(context)
+                    .textTheme
+                    .bodyMedium
+                    ?.copyWith(fontSize: 14.5.sp, color: context.greyDarkText),
+              ),
+              CustomButton(
+                onTap: () {
+                  if (authController.isLoading) {
+                    return showToast(message: "Please wait..");
+                  }
+                  navigate(context: context, page: const RegisterScreen());
+                },
+                type: ButtonType.tertiary,
+                child: Container(
+                  decoration: BoxDecoration(
+                    border: Border(
+                      bottom: BorderSide(
+                        color:
+                            context.primaryColorText, // Set your desired color
                       ),
                     ),
-                    child: CustomText(
-                      "Register Now",
-                      textAlign: TextAlign.center,
-                      style: Helper(context).textTheme.bodyLarge?.copyWith(
-                          fontSize: 14.5.sp,
-                          color: primaryColorText,
-                          textBaseline: TextBaseline.ideographic),
-                    ),
+                  ),
+                  child: CustomText(
+                    "Register Now",
+                    textAlign: TextAlign.center,
+                    style: Helper(context).textTheme.bodyLarge?.copyWith(
+                        fontSize: 14.5.sp,
+                        color: context.primaryColorText,
+                        textBaseline: TextBaseline.ideographic),
                   ),
                 ),
-              ],
-            ),
-          );
-        }
-      ),
+              ),
+            ],
+          ),
+        );
+      }),
       body: SingleChildScrollView(
         padding: AppConstants.screenPadding,
         child: Center(
@@ -90,10 +90,8 @@ class LoginScreen extends StatelessWidget {
                 CustomText(
                   "Login to your merchant account\nand manage your business.",
                   textAlign: TextAlign.center,
-                  style: Helper(context)
-                      .textTheme
-                      .bodyMedium
-                      ?.copyWith(fontSize: 14.5.sp, color: greyDarkText),
+                  style: Helper(context).textTheme.bodyMedium?.copyWith(
+                      fontSize: 14.5.sp, color: context.greyDarkText),
                 ),
                 sizedBoxHeight(height: 32),
                 AppTextFieldWithHeading(
@@ -148,7 +146,7 @@ class LoginScreen extends StatelessWidget {
                         "Forgot Password?",
                         textAlign: TextAlign.center,
                         style: Helper(context).textTheme.bodyMedium?.copyWith(
-                            fontSize: 13.5.sp, color: primaryColorText),
+                            fontSize: 13.5.sp, color: context.primaryColorText),
                       ),
                     )
                   ],
@@ -157,12 +155,12 @@ class LoginScreen extends StatelessWidget {
                 CustomButton(
                   height: 65.h,
                   radius: 16.r,
-                  gradient: buttonGradient,
+                  gradient: context.buttonGradient,
                   onTap: () {
-                      if (authController.isLoading) {
-                        return showToast(message: "Please wait..");
-                      }
-                      navigate(context: context, page: const DashboardScreen());
+                    if (authController.isLoading) {
+                      return showToast(message: "Please wait..");
+                    }
+                    navigate(context: context, page: const DashboardScreen());
                   },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -170,15 +168,13 @@ class LoginScreen extends StatelessWidget {
                       CustomText(
                         "Login",
                         textAlign: TextAlign.center,
-                        style: Helper(context)
-                            .textTheme
-                            .bodyMedium
-                            ?.copyWith(fontSize: 16.sp, ),
+                        style: Helper(context).textTheme.bodyMedium?.copyWith(
+                              fontSize: 16.sp,
+                            ),
                       ),
                       sizedBoxWidth(width: 16),
-                     const  Icon(
+                      const Icon(
                         Icons.arrow_forward,
-                        
                       )
                     ],
                   ),

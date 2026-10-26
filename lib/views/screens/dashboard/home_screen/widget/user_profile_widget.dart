@@ -16,7 +16,7 @@ class UserProfileWidget extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(16.w),
       width: double.infinity,
-      decoration: containerDecoration ,
+      decoration: context.containerDecoration,
       child: Row(
         children: [
           Container(
@@ -27,7 +27,9 @@ class UserProfileWidget extends StatelessWidget {
               shape: BoxShape.circle,
               border: BoxBorder.all(
                   width: 1,
-                  color: context.isDarkMode ? primaryColor : greyDart),
+                  color: context.isDarkMode
+                      ? context.primaryColor
+                      : context.greyDart),
             ),
             child: const CustomImage(
               path: Assets.imagesNoProfile,
@@ -44,23 +46,23 @@ class UserProfileWidget extends StatelessWidget {
                     .textTheme
                     .titleSmall
                     ?.copyWith(fontSize: 18.sp),
-              ), 
-              sizedBoxHeight(height: 2.h), 
+              ),
+              sizedBoxHeight(height: 2.h),
               CustomText(
                 "Wallet Balance",
                 style: Helper(context)
                     .textTheme
                     .bodyMedium
-                    ?.copyWith(fontSize: 12.sp ,color: greyText),
-              ), 
-              sizedBoxHeight(height: 2.h), 
+                    ?.copyWith(fontSize: 12.sp, color: context.greyText),
+              ),
+              sizedBoxHeight(height: 2.h),
               CustomText(
                 "₹48,250.00",
                 style: Helper(context)
                     .textTheme
                     .titleMedium
-                    ?.copyWith(fontSize: 20.sp ),
-              ), 
+                    ?.copyWith(fontSize: 20.sp),
+              ),
             ],
           )
         ],

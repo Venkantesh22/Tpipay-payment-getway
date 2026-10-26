@@ -1,4 +1,5 @@
-import 'package:custom_refresh_indicator/custom_refresh_indicator.dart' show CustomRefreshIndicator, IndicatorController;
+import 'package:custom_refresh_indicator/custom_refresh_indicator.dart'
+    show CustomRefreshIndicator, IndicatorController;
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -23,7 +24,8 @@ class CustomRefresh extends StatefulWidget {
   State<CustomRefresh> createState() => _CustomRefreshState();
 }
 
-class _CustomRefreshState extends State<CustomRefresh> with SingleTickerProviderStateMixin {
+class _CustomRefreshState extends State<CustomRefresh>
+    with SingleTickerProviderStateMixin {
   double _indicatorSize = 70.0;
   ScrollDirection prevScrollDirection = ScrollDirection.idle;
 

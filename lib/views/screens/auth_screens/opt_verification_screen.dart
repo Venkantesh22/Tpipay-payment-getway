@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pinput/pinput.dart'; 
+import 'package:pinput/pinput.dart';
 import 'package:vlr/services/constants.dart';
 import 'package:vlr/services/custom_text.dart';
 import 'package:vlr/services/theme.dart';
@@ -81,8 +81,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-                        sizedBoxHeight(height: 18),
-
+            sizedBoxHeight(height: 18),
             CustomText(
               "Enter OTP",
               style: Helper(context).textTheme.titleSmall?.copyWith(
@@ -96,14 +95,14 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                 style: Helper(context)
                     .textTheme
                     .bodyMedium
-                    ?.copyWith(fontSize: 16.sp, color: greyDarkText),
+                    ?.copyWith(fontSize: 16.sp, color: context.greyDarkText),
                 children: [
                   TextSpan(
                     text: widget.otpSendOn,
                     style: Helper(context)
                         .textTheme
                         .bodyLarge
-                        ?.copyWith(fontSize: 16.sp, color: blackTheme),
+                        ?.copyWith(fontSize: 16.sp, color: context.blackTheme),
                   ),
                 ],
               ),
@@ -129,7 +128,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                       "Resend OTP in 00:$_formattedTime",
                       style: Helper(context).textTheme.bodyMedium?.copyWith(
                             fontSize: 14.sp,
-                            color: greyDarkText,
+                            color: context.greyDarkText,
                           ),
                     )
                   : GestureDetector(
@@ -140,7 +139,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                       child: CustomText(
                         "Didn't receive the code? Resend",
                         style: Helper(context).textTheme.bodyMedium?.copyWith(
-                              color: greyDarkText,
+                              color: context.greyDarkText,
                               fontSize: 14.sp,
                               fontWeight: FontWeight.bold,
                             ),

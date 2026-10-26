@@ -15,7 +15,6 @@ class AuthController extends GetxController implements GetxService {
 
   UserModel? _userModel;
 
-
   UserModel? get userModel => _userModel;
 
   bool get isLoading => _isLoading;
@@ -154,6 +153,18 @@ class AuthController extends GetxController implements GetxService {
   //   update();
   //   return responseModel;
   // }
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    firstNameController.dispose();
+    lastNameController.dispose();
+    companyNameController.dispose();
+    mobileController.dispose();
+    confirmPasswordController.dispose();
+    super.dispose();
+  }
 
   void toggleTerms() {
     _acceptTerms = !_acceptTerms;

@@ -22,4 +22,20 @@ class TransactionController extends GetxController implements GetxService {
     TransactionStatusModel(title: "Failed", id: 4),
     TransactionStatusModel(title: "Refund", id: 5),
   ];
+
+  TextEditingController fromDateController = TextEditingController();
+  TextEditingController toDateController = TextEditingController();
+  TextEditingController minAmountSearchController = TextEditingController();
+  TextEditingController maxAmountSearchController = TextEditingController();
+
+  @override
+  void dispose() {
+    transactionSearchController.dispose();
+    toDateController.dispose();
+    fromDateController.dispose();
+    minAmountSearchController.dispose();
+    maxAmountSearchController.dispose();
+
+    super.dispose();
+  }
 }

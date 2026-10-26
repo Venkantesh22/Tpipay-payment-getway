@@ -26,19 +26,24 @@ class CustomDatePicker extends StatelessWidget {
             context: context,
             initialDate: DateTime.now().subtract(Duration(days: 356 * years)),
             firstDate: DateTime(1940),
-            lastDate: years == 0 ? DateTime.now().add(const Duration(days: 356 * 10)) : DateTime.now().subtract(Duration(days: 356 * years)),
+            lastDate: years == 0
+                ? DateTime.now().add(const Duration(days: 356 * 10))
+                : DateTime.now().subtract(Duration(days: 356 * years)),
             builder: (context, child) {
               return Theme(
                 data: Theme.of(context).copyWith(
                   textTheme: TextTheme(
-                    headlineMedium: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          fontSize: 20.0.sp,
-                        ),
+                    headlineMedium:
+                        Theme.of(context).textTheme.titleMedium?.copyWith(
+                              fontSize: 20.0.sp,
+                            ),
                   ),
                   colorScheme: ColorScheme.light(
-                    primary: Theme.of(context).primaryColor, // header background color
+                    primary: Theme.of(context)
+                        .primaryColor, // header background color
                     onPrimary: Colors.white, // header text color
-                    onSurface: Theme.of(context).primaryColor, // body text color
+                    onSurface:
+                        Theme.of(context).primaryColor, // body text color
                   ),
                   textButtonTheme: TextButtonThemeData(
                     style: TextButton.styleFrom(
@@ -58,14 +63,17 @@ class CustomDatePicker extends StatelessWidget {
                   return Theme(
                     data: Theme.of(context).copyWith(
                       textTheme: TextTheme(
-                        headlineMedium: Theme.of(context).textTheme.titleMedium?.copyWith(
-                              fontSize: 20.0.sp,
-                            ),
+                        headlineMedium:
+                            Theme.of(context).textTheme.titleMedium?.copyWith(
+                                  fontSize: 20.0.sp,
+                                ),
                       ),
                       colorScheme: ColorScheme.light(
-                        primary: Theme.of(context).primaryColor, // header background color
+                        primary: Theme.of(context)
+                            .primaryColor, // header background color
                         onPrimary: Colors.white, // header text color
-                        onSurface: Theme.of(context).primaryColor, // body text color
+                        onSurface:
+                            Theme.of(context).primaryColor, // body text color
                       ),
                       textButtonTheme: TextButtonThemeData(
                         style: TextButton.styleFrom(
@@ -79,7 +87,8 @@ class CustomDatePicker extends StatelessWidget {
               ).then((value) {
                 // return null;
                 if (value != null) {
-                  onChanged(DateTime(dateValue.year, dateValue.month, dateValue.day, value.hour, value.minute));
+                  onChanged(DateTime(dateValue.year, dateValue.month,
+                      dateValue.day, value.hour, value.minute));
                 }
               });
             } else {

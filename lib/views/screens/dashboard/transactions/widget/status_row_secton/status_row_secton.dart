@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:vlr/controllers/transaction_controller.dart';
 import 'package:vlr/services/constants.dart';
-import 'package:vlr/views/screens/dashboard/transactions/transactions_screen.dart';
 import 'package:vlr/views/screens/dashboard/transactions/widget/status_row_secton/transaction_status_widget.dart';
 
 class StatusRowSection extends StatefulWidget {

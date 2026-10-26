@@ -82,7 +82,7 @@ class _AppTextFieldWithHeadingState extends State<AppTextFieldWithHeading> {
         theme.textTheme.bodyMedium?.copyWith(
           fontSize: 15.sp,
           fontWeight: FontWeight.w400,
-          color: greyText,
+          color: context.greyText,
           letterSpacing: 0,
         );
 
@@ -153,7 +153,6 @@ class _AppTextFieldWithHeadingState extends State<AppTextFieldWithHeading> {
           ),
           SizedBox(height: 7.h),
         ],
-
         TextFormField(
           controller: widget.controller,
           textInputAction: widget.textInputAction ?? TextInputAction.next,
@@ -167,7 +166,6 @@ class _AppTextFieldWithHeadingState extends State<AppTextFieldWithHeading> {
           onChanged: widget.onChanged,
           style: inputStyle,
           cursorColor: colorScheme.primary,
-
           decoration: CustomDecoration.inputDecoration(
             borderRadius: widget.borderRadius,
             suffix: suffixWidget,
@@ -179,14 +177,15 @@ class _AppTextFieldWithHeadingState extends State<AppTextFieldWithHeading> {
             hintStyle: hintStyleLocal,
             borderColor: widget.borderColor ?? colorScheme.outline,
             borderWidth: widget.borderWidth ?? 1.0,
+            context: context,
           ).copyWith(
             // 👇 ADDED THIS: This adjusts the internal padding to make the box ~56px tall
             // while allowing the validation error text to show safely underneath.
-            contentPadding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 12.w),
+            contentPadding:
+                EdgeInsets.symmetric(vertical: 16.h, horizontal: 12.w),
             // Optional: If contentPadding isn't enough, you can also force the minimum height of the input area:
             // constraints: BoxConstraints(minHeight: 56.h),
           ),
-          
           validator: widget.validator,
         ),
       ],

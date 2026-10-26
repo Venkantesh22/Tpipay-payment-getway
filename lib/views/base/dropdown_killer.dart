@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-
 import '../../services/input_decoration.dart';
 import 'custom_appbar.dart';
 
 ///TODO: Define toString() method for the model or Pass a data as List of String.
 class DropDownKiller<T> extends StatefulWidget {
-  const DropDownKiller({Key? key, required this.data, required this.onSelected}) : super(key: key);
+  const DropDownKiller({Key? key, required this.data, required this.onSelected})
+      : super(key: key);
 
   final List<T> data;
   final Function(T result) onSelected;
@@ -40,16 +40,17 @@ class _DropDownKillerState<T> extends State<DropDownKiller<T>> {
         centerTitle: true,
       ),
       body: Padding(
-        padding:  EdgeInsets.symmetric(horizontal: 20.0.w),
+        padding: EdgeInsets.symmetric(horizontal: 20.0.w),
         child: Column(
           children: [
             Padding(
-              padding:  EdgeInsets.symmetric(vertical: 15.0.h),
+              padding: EdgeInsets.symmetric(vertical: 15.0.h),
               child: TextFormField(
                 controller: textEditingController,
                 onChanged: onSearched,
                 decoration: CustomDecoration.inputDecoration(
                   label: "Search",
+                  context: context,
                 ),
               ),
             ),
@@ -58,15 +59,19 @@ class _DropDownKillerState<T> extends State<DropDownKiller<T>> {
                 itemCount: searched ? searchedList.length : widget.data.length,
                 itemBuilder: (context, int index) {
                   return ListTile(
-                    leading:  Icon(
+                    leading: Icon(
                       Icons.circle,
                       size: 12.sp,
                     ),
                     title: Text(
-                      searched ? searchedList[index].toString() : widget.data[index].toString(),
+                      searched
+                          ? searchedList[index].toString()
+                          : widget.data[index].toString(),
                     ),
                     onTap: () {
-                      searched ? widget.onSelected(searchedList[index]) : widget.onSelected(widget.data[index]);
+                      searched
+                          ? widget.onSelected(searchedList[index])
+                          : widget.onSelected(widget.data[index]);
                       Navigator.pop(context);
                     },
                   );

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -98,10 +97,6 @@ class CustomButton extends StatelessWidget {
   Widget _buildPrimaryButton(BuildContext context) {
     final bool hasGradient = gradient != null;
 
-    final Gradient? buttonGradient = isLoading
-        ? null
-        : gradient;
-
     return Material(
       color: Colors.transparent,
       elevation: elevation,
@@ -114,12 +109,10 @@ class CustomButton extends StatelessWidget {
               : hasGradient
                   ? null
                   : color ?? Theme.of(context).primaryColor,
-          gradient: buttonGradient,
+          gradient: context.buttonGradient,
           borderRadius: BorderRadius.circular(radius),
-          border: Border.all(
-            width: borderWidth ?? 1,
-            color: Colors.transparent
-          ),
+          border:
+              Border.all(width: borderWidth ?? 1, color: Colors.transparent),
         ),
         child: InkWell(
           onTap: isLoading ? null : onTap,
@@ -158,8 +151,8 @@ class CustomButton extends StatelessWidget {
           child: Center(
             child: _buildButtonContent(
               context,
-              loadingColor: primaryColor,
-              defaultTextColor: primaryColor,
+              loadingColor: context.primaryColor,
+              defaultTextColor: context.primaryColor,
             ),
           ),
         ),

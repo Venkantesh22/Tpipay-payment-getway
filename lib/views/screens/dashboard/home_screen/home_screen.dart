@@ -12,7 +12,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const AppbarWidget(),
+      appBar: const AppBarWidget(),
       body: SingleChildScrollView(
         padding: AppConstants.screenPadding,
         child: Column(
@@ -24,9 +24,6 @@ class HomeScreen extends StatelessWidget {
             const RowOfServiceSection(),
             sizedBoxHeight(height: 16),
             RecentTransactionsSection()
-
-                         
-
           ],
         ),
       ),

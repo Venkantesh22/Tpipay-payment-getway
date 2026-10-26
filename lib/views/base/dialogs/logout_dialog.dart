@@ -73,7 +73,7 @@ class LogoutDialog extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: CustomButton(
-                color: primaryColor,
+                color: context.primaryColor,
                 radius: 6,
                 type: ButtonType.primary,
                 title: 'Yes, Log Me Out',

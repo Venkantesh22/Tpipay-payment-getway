@@ -21,20 +21,18 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
 
-
-         Timer(const Duration(seconds: 2), () {
-        
-          // if (Get.find<SharedPreferences>().getBool(AppConstants.isFirstVisit) ?? true) {
-          //   Navigator.pushReplacement(
-          //     context,
-          //     getCustomRoute(
-          //       child: const IntroScreen(),
-          //     ),
-          //   );
-          // } else {
-            navigate(context: context, page: LoginScreen());
-          // }
-        });
+    Timer(const Duration(seconds: 2), () {
+      // if (Get.find<SharedPreferences>().getBool(AppConstants.isFirstVisit) ?? true) {
+      //   Navigator.pushReplacement(
+      //     context,
+      //     getCustomRoute(
+      //       child: const IntroScreen(),
+      //     ),
+      //   );
+      // } else {
+      navigate(context: context, page: LoginScreen());
+      // }
+    });
 
 //    Get.find<BasicController>().fetchSettings().then((value) async {
 //       if (value.isSuccess) {
@@ -119,77 +117,80 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Stack(
+      children: [
+        Column(
           children: [
-            Column(
-              children: [
-                sizedBoxHeight(height: MediaQuery.of(context).size.height / 4.8),
-                CustomImage(
-                  path: context.imageAppLogoWithName,
-                  fit: BoxFit.cover,
-                  height: 100.h,
-                ),
-                sizedBoxHeight(height: 20),
-                CustomText(
-                  'Payments Made Easy\nfor Your Business',
-                  textAlign: TextAlign.center,
-                  overflow: TextOverflow.clip,
-                  style: Helper(context)
-                      .textTheme
-                      .bodyMedium
-                      ?.copyWith(fontSize: 19.sp),
-                ),
-                const Spacer(),
-                CustomImage(
-                  path: context.splashImage,
-                  height:  MediaQuery.of(context).size.height / 2.5,
-                  width: double.infinity,
-                  fit: BoxFit.fitWidth,
-                ),
-                sizedBoxHeight(height: 30),
-                const CircularProgressIndicator(),
-                sizedBoxHeight(height: 50),
-              ],
+            sizedBoxHeight(height: MediaQuery.of(context).size.height / 4.8),
+            CustomImage(
+              path: context.imageAppLogoWithName,
+              fit: BoxFit.cover,
+              height: 100.h,
             ),
-            Positioned(
-              left: -260,
-             top:  -260,
-              child: Container(
-                height: MediaQuery.of(context).size.height / 2,
-                width:
-                    MediaQuery.of(context).size.height / 2, 
-                decoration:  BoxDecoration(
-                  color:   context.isDarkMode ? const Color(0xFF281D6E).withValues(alpha: 0.5) :  primaryColorWithTheme.withValues(alpha: 0.10),
-                  shape: BoxShape.circle,
-                ),
-              ),
+            sizedBoxHeight(height: 20),
+            CustomText(
+              'Payments Made Easy\nfor Your Business',
+              textAlign: TextAlign.center,
+              overflow: TextOverflow.clip,
+              style: Helper(context)
+                  .textTheme
+                  .bodyMedium
+                  ?.copyWith(fontSize: 19.sp),
             ),
-            Positioned(
-              right: -100,
-             top:  -100,
-              child: Container(
-                height: MediaQuery.of(context).size.height / 3.5,
-                width:
-                    MediaQuery.of(context).size.height / 3.5, 
-                decoration:  BoxDecoration(
-                  color:   context.isDarkMode ? const Color(0xFF281D6E).withValues(alpha: 0.5) :  primaryColorWithTheme.withValues(alpha: 0.10),
-                  shape: BoxShape.circle,
-                ),
-              ),
+            const Spacer(),
+            CustomImage(
+              path: context.splashImage,
+              height: MediaQuery.of(context).size.height / 2.5,
+              width: double.infinity,
+              fit: BoxFit.fitWidth,
             ),
-            Positioned(
-              right: -400,
-             bottom:  -450,
-              child: Container(
-                height: MediaQuery.of(context).size.height / 1.5,
-                width:
-                    MediaQuery.of(context).size.height / 1.5, 
-                decoration:  BoxDecoration(
-                  color:   context.isDarkMode ? const Color(0xFF281D6E).withValues(alpha: 0.5) :  primaryColorWithTheme.withValues(alpha: 0.10),
-                  shape: BoxShape.circle,
-                ),
-              ),
-            )
+            sizedBoxHeight(height: 30),
+            const CircularProgressIndicator(),
+            sizedBoxHeight(height: 50),
           ],
-        ));
+        ),
+        Positioned(
+          left: -260,
+          top: -260,
+          child: Container(
+            height: MediaQuery.of(context).size.height / 2,
+            width: MediaQuery.of(context).size.height / 2,
+            decoration: BoxDecoration(
+              color: context.isDarkMode
+                  ? const Color(0xFF281D6E).withValues(alpha: 0.5)
+                  : context.primaryColorWithTheme.withValues(alpha: 0.10),
+              shape: BoxShape.circle,
+            ),
+          ),
+        ),
+        Positioned(
+          right: -100,
+          top: -100,
+          child: Container(
+            height: MediaQuery.of(context).size.height / 3.5,
+            width: MediaQuery.of(context).size.height / 3.5,
+            decoration: BoxDecoration(
+              color: context.isDarkMode
+                  ? const Color(0xFF281D6E).withValues(alpha: 0.5)
+                  : context.primaryColorWithTheme.withValues(alpha: 0.10),
+              shape: BoxShape.circle,
+            ),
+          ),
+        ),
+        Positioned(
+          right: -400,
+          bottom: -450,
+          child: Container(
+            height: MediaQuery.of(context).size.height / 1.5,
+            width: MediaQuery.of(context).size.height / 1.5,
+            decoration: BoxDecoration(
+              color: context.isDarkMode
+                  ? const Color(0xFF281D6E).withValues(alpha: 0.5)
+                  : context.primaryColorWithTheme.withValues(alpha: 0.10),
+              shape: BoxShape.circle,
+            ),
+          ),
+        )
+      ],
+    ));
   }
 }

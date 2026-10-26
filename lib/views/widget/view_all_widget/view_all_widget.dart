@@ -8,9 +8,7 @@ import 'package:vlr/views/base/custom_button.dart';
 class ViewAllWidget extends StatelessWidget {
   final Function()? onTap;
   final String? title;
-  const ViewAllWidget({
-    super.key,  required this.onTap, this.title
-  });
+  const ViewAllWidget({super.key, required this.onTap, this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +16,11 @@ class ViewAllWidget extends StatelessWidget {
       onTap: onTap,
       type: ButtonType.tertiary,
       child: CustomText(
-      title ??   "View All",
-        style: Helper(context).textTheme.bodyLarge?.copyWith(
-              fontSize: 12.sp,
-              color: primaryColorText
-            ),
+        title ?? "View All",
+        style: Helper(context)
+            .textTheme
+            .bodyLarge
+            ?.copyWith(fontSize: 12.sp, color: context.primaryColorText),
       ),
     );
   }

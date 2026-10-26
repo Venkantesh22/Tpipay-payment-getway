@@ -54,7 +54,8 @@ class ConfirmationDialog extends StatelessWidget {
                     height: dialogHeight ?? size.height * 0.25,
                     width: size.width * 0.8,
                     decoration: BoxDecoration(
-                      color: bodyTextColor ?? Theme.of(context).colorScheme.background,
+                      color: bodyTextColor ??
+                          Theme.of(context).colorScheme.background,
                     ),
                     child: Column(
                       children: [

@@ -13,7 +13,7 @@ getImageBottomSheet(context) {
     enableDrag: false,
     backgroundColor: Colors.transparent,
     isDismissible: true,
-    shape:  RoundedRectangleBorder(
+    shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.only(
         topRight: Radius.circular(10.r),
         topLeft: Radius.circular(10.r),
@@ -50,7 +50,8 @@ class ShowImageOptions extends StatelessWidget {
               InkWell(
                 onTap: () async {
                   var navigator = Navigator.of(context);
-                  File? data = await ServiceController().pickImage(ImageSource.gallery, context);
+                  File? data = await ServiceController()
+                      .pickImage(ImageSource.gallery, context);
                   navigator.pop(data);
                 },
                 child: Ink(
@@ -79,7 +80,8 @@ class ShowImageOptions extends StatelessWidget {
               InkWell(
                 onTap: () async {
                   var navigator = Navigator.of(context);
-                  File? data = await ServiceController().pickImage(ImageSource.camera, context);
+                  File? data = await ServiceController()
+                      .pickImage(ImageSource.camera, context);
 
                   navigator.pop(data);
                 },

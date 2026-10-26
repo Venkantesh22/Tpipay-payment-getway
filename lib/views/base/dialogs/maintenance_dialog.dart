@@ -26,7 +26,10 @@ class MaintenanceDialog extends StatelessWidget {
                   child: Text(
                     "Way 2 Sports",
                     textAlign: TextAlign.justify,
-                    style: GoogleFonts.poppins(fontSize: 16.0, fontWeight: FontWeight.w400, color: Colors.grey[900]),
+                    style: GoogleFonts.poppins(
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.grey[900]),
                   ),
                 ),
                 const SizedBox(
@@ -35,7 +38,10 @@ class MaintenanceDialog extends StatelessWidget {
                 Text(
                   "App is Under Maintenance",
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.quicksand(fontSize: 14.0, fontWeight: FontWeight.w700, color: Colors.grey[800]),
+                  style: GoogleFonts.quicksand(
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.grey[800]),
                 ),
                 const SizedBox(
                   height: 20,
@@ -50,7 +56,9 @@ class MaintenanceDialog extends StatelessWidget {
                       child: Container(
                         height: 40,
                         width: size.width * 0.3,
-                        decoration: BoxDecoration(color: Theme.of(context).primaryColor, borderRadius: BorderRadius.circular(5)),
+                        decoration: BoxDecoration(
+                            color: Theme.of(context).primaryColor,
+                            borderRadius: BorderRadius.circular(5)),
                         child: const Center(
                           child: Text(
                             'OK',

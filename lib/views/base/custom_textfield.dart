@@ -61,22 +61,22 @@ class CustomTextField extends StatelessWidget {
         textInputAction: TextInputAction.next,
         decoration: InputDecoration(
           suffixIcon: Padding(
-            padding:  EdgeInsets.only(
+            padding: EdgeInsets.only(
               right: 5.r,
             ),
             child: suffixIcon,
           ),
           prefix: Padding(
-            padding:  EdgeInsets.only(
+            padding: EdgeInsets.only(
               right: 5.r,
             ),
             child: prefixWidget,
           ),
-          prefixIconConstraints:  BoxConstraints(
+          prefixIconConstraints: BoxConstraints(
             maxHeight: 25.h,
             maxWidth: 25.w,
           ),
-          suffixIconConstraints:  BoxConstraints(
+          suffixIconConstraints: BoxConstraints(
             maxHeight: 25.h,
             maxWidth: 25.w,
           ),
@@ -84,7 +84,8 @@ class CustomTextField extends StatelessWidget {
           hintStyle: Theme.of(context).textTheme.bodyMedium!.copyWith(
                 color: Theme.of(context).hintColor,
               ),
-          contentPadding:  EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w),
+          contentPadding:
+              EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w),
           filled: true,
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.r),

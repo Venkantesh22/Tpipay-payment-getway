@@ -25,6 +25,7 @@ class CustomDropDownList<T> extends StatelessWidget {
   final Color? borderColor;
   final Color? bgColor;
   final double borderRadius;
+  final BuildContext context;
 
   const CustomDropDownList({
     super.key,
@@ -43,10 +44,12 @@ class CustomDropDownList<T> extends StatelessWidget {
     this.borderColor,
     this.bgColor,
     this.borderRadius = 12,
+    required this.context,
   });
 
-  Color get borderColorLocal => borderColor ?? greyTheme.withValues(alpha: 0.5);
-  Color get bgColorLocal => bgColor ?? greyTheme.withValues(alpha: 0.1);
+  Color get borderColorLocal =>
+      borderColor ?? context.greyTheme.withValues(alpha: 0.5);
+  Color get bgColorLocal => bgColor ?? context.greyTheme.withValues(alpha: 0.1);
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +61,7 @@ class CustomDropDownList<T> extends StatelessWidget {
         Helper(context).textTheme.bodyMedium?.copyWith(
               fontSize: 13.sp,
               fontWeight: FontWeight.w400,
-              color: greyText,
+              color: context.greyText,
             );
 
     return Column(
@@ -111,6 +114,7 @@ class CustomDropDownList<T> extends StatelessWidget {
             prefixText: prefixText,
             prefixStyle: prefixStyle,
             borderRadius: borderRadius,
+            context: context,
           ),
 
           items: items.map((e) {

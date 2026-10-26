@@ -7,6 +7,7 @@ import 'package:vlr/main.dart';
 import 'package:vlr/services/route_helper.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:toastification/toastification.dart';
+import 'package:vlr/services/theme.dart';
 
 class PriceConverter {
   static String convert(dynamic price) {
@@ -131,17 +132,13 @@ void showToast({
   late final IconData iconData;
 
   if (resolvedType == ToastificationType.success) {
-    accentColor = isDark
-        ? const Color(0xFF4ADE80)
-        : const Color(0xFF16A34A);
+    accentColor = isDark ? const Color(0xFF4ADE80) : const Color(0xFF16A34A);
     iconData = Icons.check_circle_outline_rounded;
   } else if (resolvedType == ToastificationType.error) {
     accentColor = colorScheme.error;
     iconData = Icons.error_outline_rounded;
   } else if (resolvedType == ToastificationType.warning) {
-    accentColor = isDark
-        ? const Color(0xFFFBBF24)
-        : const Color(0xFFF59E0B);
+    accentColor = isDark ? const Color(0xFFFBBF24) : const Color(0xFFF59E0B);
     iconData = Icons.warning_amber_rounded;
   } else {
     accentColor = colorScheme.primary;
@@ -206,8 +203,6 @@ String getStringFromList(List<dynamic>? data) {
   return data.toString().substring(1, str.length - 1);
 }
 
-
-
 class AppConstants {
   String get getBaseUrl => baseUrl;
   set setBaseUrl(String url) => baseUrl = url;
@@ -216,11 +211,10 @@ class AppConstants {
 
   static String appNameFirstHalf = 'Tpipay';
   static String appNameSecondHalf = '';
-  
+
   static String appName = '$appNameFirstHalf $appNameSecondHalf';
 
-    static String subTitle = 'Payment Gateways';
-
+  static String subTitle = 'Payment Gateways';
 
   static const String dashboard = '/hrms/dashboard';
 

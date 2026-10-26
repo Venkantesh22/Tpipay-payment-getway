@@ -19,13 +19,14 @@ class CustomDecoration {
     Color bgColor = Colors.transparent,
     double borderRadius = 12.0,
     double borderWidth = .5,
+    required BuildContext context,
     EdgeInsetsGeometry contentPadding =
         const EdgeInsets.fromLTRB(20, 10, 20, 13),
   }) {
     prefixStyle ??= GoogleFonts.montserrat(
       fontSize: 16.sp,
       fontWeight: FontWeight.w400,
-      color: textSecondary,
+      color: context.textSecondary,
     );
     assert(prefixText == null || icon == null,
         "Strings are equal So this message is been displayed!!");
@@ -33,7 +34,6 @@ class CustomDecoration {
     return InputDecoration(
       fillColor: bgColor,
       filled: true,
-      
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(borderRadius),
         borderSide: BorderSide(color: borderColor, width: borderWidth.w),
@@ -67,7 +67,7 @@ class CustomDecoration {
                   return icon;
                 } else if (prefixText != null) {
                   return Padding(
-                    padding:  EdgeInsets.only(
+                    padding: EdgeInsets.only(
                       left: 20.0.h,
                       right: 10.0.h,
                     ),
@@ -94,7 +94,7 @@ class CustomDecoration {
               style: GoogleFonts.montserrat(
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w400,
-                color: textPrimary,
+                color: context.textPrimary,
               ),
             )
           : null,
@@ -103,7 +103,7 @@ class CustomDecoration {
           GoogleFonts.montserrat(
             fontSize: 16.sp,
             fontWeight: FontWeight.w400,
-            color: textSecondary,
+            color: context.textSecondary,
           ),
       floatingLabelBehavior:
           floating ? FloatingLabelBehavior.always : FloatingLabelBehavior.auto,
@@ -162,7 +162,7 @@ class CustomDecoration {
               style: GoogleFonts.montserrat(
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w400,
-                color: textPrimary,
+                color: context.textPrimary,
               ),
             )
           : null,
@@ -171,7 +171,7 @@ class CustomDecoration {
           GoogleFonts.montserrat(
             fontSize: 16.sp,
             fontWeight: FontWeight.w400,
-            color: textSecondary,
+            color: context.textSecondary,
           ),
       floatingLabelBehavior:
           floating ? FloatingLabelBehavior.always : FloatingLabelBehavior.never,

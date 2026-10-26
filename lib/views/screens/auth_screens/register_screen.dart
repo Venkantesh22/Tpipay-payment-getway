@@ -53,10 +53,8 @@ class RegisterScreen extends StatelessWidget {
                   CustomText(
                     "Register now and start accepting\npayments with TpiPay.",
                     textAlign: TextAlign.center,
-                    style: Helper(context)
-                        .textTheme
-                        .bodyMedium
-                        ?.copyWith(fontSize: 14.5.sp, color: greyDarkText),
+                    style: Helper(context).textTheme.bodyMedium?.copyWith(
+                        fontSize: 14.5.sp, color: context.greyDarkText),
                   ),
                   sizedBoxHeight(height: 32),
                   Row(
@@ -203,12 +201,15 @@ class RegisterScreen extends StatelessWidget {
                   CustomButton(
                     height: 65.h,
                     radius: 16.r,
-                    gradient: buttonGradient,
+                    gradient: context.buttonGradient,
                     onTap: () {
-                         if (authController.isLoading) {
+                      if (authController.isLoading) {
                         return showToast(message: "Please wait..");
                       }
-                      navigate(context: context, page: OtpVerificationScreen(otpSendOn: "+91 1234567890"));
+                      navigate(
+                          context: context,
+                          page: OtpVerificationScreen(
+                              otpSendOn: "+91 1234567890"));
                     },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -222,7 +223,7 @@ class RegisterScreen extends StatelessWidget {
                               ?.copyWith(fontSize: 16.sp),
                         ),
                         sizedBoxWidth(width: 16),
-                   const      Icon(
+                        const Icon(
                           Icons.arrow_forward,
                         )
                       ],
@@ -232,10 +233,8 @@ class RegisterScreen extends StatelessWidget {
                   CustomText(
                     "Already have an account?",
                     textAlign: TextAlign.center,
-                    style: Helper(context)
-                        .textTheme
-                        .bodyMedium
-                        ?.copyWith(fontSize: 14.5.sp, color: greyDarkText),
+                    style: Helper(context).textTheme.bodyMedium?.copyWith(
+                        fontSize: 14.5.sp, color: context.greyDarkText),
                   ),
                   CustomButton(
                     onTap: () {
@@ -249,7 +248,8 @@ class RegisterScreen extends StatelessWidget {
                       decoration: BoxDecoration(
                         border: Border(
                           bottom: BorderSide(
-                            color: primaryColorText, // Set your desired color
+                            color: context
+                                .primaryColorText, // Set your desired color
                           ),
                         ),
                       ),
@@ -258,7 +258,7 @@ class RegisterScreen extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: Helper(context).textTheme.bodyLarge?.copyWith(
                             fontSize: 14.5.sp,
-                            color: primaryColorText,
+                            color: context.primaryColorText,
                             textBaseline: TextBaseline.ideographic),
                       ),
                     ),

@@ -12,7 +12,7 @@ class ServiceScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const AppbarWidget(),
+      appBar: const AppBarWidget(),
       body: Padding(
         padding: AppConstants.screenPadding,
         child: Column(
@@ -31,7 +31,7 @@ class ServiceScreen extends StatelessWidget {
               overflow: TextOverflow.clip,
               style: Helper(context).textTheme.bodyMedium?.copyWith(
                     fontSize: 14.sp,
-                    color: greyText,
+                    color: context.greyText,
                   ),
             ),
             sizedBoxHeight(height: 20.h),
@@ -42,8 +42,7 @@ class ServiceScreen extends StatelessWidget {
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   childAspectRatio: 1.1,
                   crossAxisCount: 2,
-                  crossAxisSpacing:
-                      14.w, 
+                  crossAxisSpacing: 14.w,
                   mainAxisSpacing: 14.h,
                 ),
                 itemBuilder: (context, index) {

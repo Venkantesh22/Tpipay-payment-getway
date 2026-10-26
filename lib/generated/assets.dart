@@ -78,6 +78,10 @@ class Assets {
   /// assets/svgs/phone.svg
   static const String svgsPhone = "assets/svgs/phone.svg";
 
+  /// Assets for svgsReset
+  /// assets/svgs/reset.svg
+  static const String svgsReset = "assets/svgs/reset.svg";
+
   /// Assets for svgsService
   /// assets/svgs/service.svg
   static const String svgsService = "assets/svgs/service.svg";

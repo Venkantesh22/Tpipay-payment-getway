@@ -23,15 +23,16 @@ class TransactionShotWidget extends StatelessWidget {
           padding: EdgeInsets.all(10.w),
           decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: green.withValues(alpha: 0.05),
+              color: context.green.withValues(alpha: 0.05),
               border: Border.all(
                 width: 1,
-                color: green.withValues(alpha: context.isDarkMode ? 0.30 :  0.10),
+                color: context.green
+                    .withValues(alpha: context.isDarkMode ? 0.30 : 0.10),
               )),
           child: SvgPicture.asset(
             Assets.svgsDynamicQr,
             colorFilter: ColorFilter.mode(
-              green,
+              context.green,
               BlendMode.srcIn,
             ),
           ),
@@ -54,7 +55,7 @@ class TransactionShotWidget extends StatelessWidget {
                 style: Helper(context)
                     .textTheme
                     .bodyMedium
-                    ?.copyWith(fontSize: 11.sp, color: greyText),
+                    ?.copyWith(fontSize: 11.sp, color: context.greyText),
               ),
             ],
           ),

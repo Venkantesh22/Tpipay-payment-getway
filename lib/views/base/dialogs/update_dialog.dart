@@ -34,7 +34,10 @@ class UpdateDialog extends StatelessWidget {
                   child: Text(
                     "Update App",
                     textAlign: TextAlign.justify,
-                    style: GoogleFonts.poppins(fontSize: 14.0, fontWeight: FontWeight.w400, color: Colors.grey[900]),
+                    style: GoogleFonts.poppins(
+                        fontSize: 14.0,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.grey[900]),
                   ),
                 ),
                 const SizedBox(
@@ -43,7 +46,10 @@ class UpdateDialog extends StatelessWidget {
                 Text(
                   remark,
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.quicksand(fontSize: 12.0, fontWeight: FontWeight.w700, color: Colors.grey[800]),
+                  style: GoogleFonts.quicksand(
+                      fontSize: 12.0,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.grey[800]),
                 ),
                 const SizedBox(
                   height: 20,
@@ -59,7 +65,9 @@ class UpdateDialog extends StatelessWidget {
                         child: Container(
                           height: 40,
                           width: size.width * 0.3,
-                          decoration: BoxDecoration(color: Colors.grey.shade100, borderRadius: BorderRadius.circular(5)),
+                          decoration: BoxDecoration(
+                              color: Colors.grey.shade100,
+                              borderRadius: BorderRadius.circular(5)),
                           child: Center(
                             child: Text(
                               'Later',
@@ -97,7 +105,9 @@ class UpdateDialog extends StatelessWidget {
                       child: Container(
                         height: 40,
                         width: size.width * 0.3,
-                        decoration: BoxDecoration(color: Theme.of(context).primaryColor, borderRadius: BorderRadius.circular(5)),
+                        decoration: BoxDecoration(
+                            color: Theme.of(context).primaryColor,
+                            borderRadius: BorderRadius.circular(5)),
                         child: const Center(
                           child: Text(
                             'Update Now',

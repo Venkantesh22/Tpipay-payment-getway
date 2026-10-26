@@ -29,21 +29,32 @@ extension Converters on dynamic {
 }
 
 extension CapExtension on String? {
-  String get inCaps => isValid ? (this!.isNotEmpty ? '${this![0].toUpperCase()}${this!.substring(1)}' : '') : '';
-  String get capitalizeFirstOfEach => isValid ? (this!.replaceAll(RegExp(' +'), ' ').split(" ").map((str) => str.inCaps).join(" ")) : '';
+  String get inCaps => isValid
+      ? (this!.isNotEmpty
+          ? '${this![0].toUpperCase()}${this!.substring(1)}'
+          : '')
+      : '';
+  String get capitalizeFirstOfEach => isValid
+      ? (this!
+          .replaceAll(RegExp(' +'), ' ')
+          .split(" ")
+          .map((str) => str.inCaps)
+          .join(" "))
+      : '';
   bool get isValid => this != null && this!.isNotEmpty;
   bool get isNotValid => this == null || this!.isEmpty;
-  bool get isEmail =>
-      RegExp(r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
-          .hasMatch(this!);
-  bool get isNotEmail =>
-      !(RegExp(r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
-          .hasMatch(this!));
+  bool get isEmail => RegExp(
+          r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
+      .hasMatch(this!);
+  bool get isNotEmail => !(RegExp(
+          r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
+      .hasMatch(this!));
   String get initials {
     if (isValid) {
       var list = this!.trim().split(' ');
       if (list.length > 1) {
-        return (list.first.isValid ? list.first[0] : '') + (list.last.isValid ? list.last[0] : '');
+        return (list.first.isValid ? list.first[0] : '') +
+            (list.last.isValid ? list.last[0] : '');
       } else {
         return this![0];
       }
@@ -65,7 +76,9 @@ extension CapExtension on String? {
 
   String get url {
     if (isValid) {
-      if (this!.startsWith('http') || this!.startsWith('https') || this!.startsWith('www.')) {
+      if (this!.startsWith('http') ||
+          this!.startsWith('https') ||
+          this!.startsWith('www.')) {
         return this!;
       } else {
         return 'https://$this';
@@ -98,11 +111,15 @@ extension DateTimeExtensionNullable on DateTime? {
 
 extension DateTimeExtension on DateTime {
   bool get isToday {
-    return DateFormatters().dMy.format(this) == DateFormatters().dMy.format(getDateTime());
+    return DateFormatters().dMy.format(this) ==
+        DateFormatters().dMy.format(getDateTime());
   }
 
   bool get isYesterday {
-    return DateFormatters().dMy.format(this) == DateFormatters().dMy.format(getDateTime().subtract(const Duration(days: 1)));
+    return DateFormatters().dMy.format(this) ==
+        DateFormatters()
+            .dMy
+            .format(getDateTime().subtract(const Duration(days: 1)));
   }
 
   int get getAge {
@@ -110,7 +127,8 @@ extension DateTimeExtension on DateTime {
   }
 
   bool compareDate(date) {
-    return DateFormatters().dMy.format(this) == DateFormatters().dMy.format(date);
+    return DateFormatters().dMy.format(this) ==
+        DateFormatters().dMy.format(date);
   }
 
   String get getTimeIfToday {
@@ -193,7 +211,8 @@ extension ColorBrightness on Color {
     assert(amount >= 0 && amount <= 1);
 
     final hsl = HSLColor.fromColor(this);
-    final hslLight = hsl.withLightness((hsl.lightness + amount).clamp(0.0, 1.0));
+    final hslLight =
+        hsl.withLightness((hsl.lightness + amount).clamp(0.0, 1.0));
 
     return hslLight.toColor();
   }
@@ -218,5 +237,5 @@ extension Context on BuildContext {
   TextTheme get textTheme => Theme.of(this).textTheme;
   Color get primaryColor => Theme.of(this).primaryColor;
   double get bottomViewInsets => MediaQuery.of(this).viewInsets.bottom;
-// Color get primaryColor => Theme.of(this).copyWith();
+// Color get context.primaryColor => Theme.of(this).copyWith();
 }

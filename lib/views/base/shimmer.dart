@@ -16,9 +16,9 @@ class CustomShimmer extends StatelessWidget {
     return !isLoading
         ? child
         : Shimmer.fromColors(
-      baseColor: shimmerBase,
-      highlightColor: shimmerHighlight,
-      child: child,
-    );
+            baseColor: context.shimmerBase,
+            highlightColor: context.shimmerHighlight,
+            child: child,
+          );
   }
 }

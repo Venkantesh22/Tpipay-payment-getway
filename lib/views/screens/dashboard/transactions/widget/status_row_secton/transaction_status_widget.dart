@@ -25,10 +25,10 @@ class TransactionStatusWidget extends StatelessWidget {
         width: 90.w,
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          color: isSelected ? primaryColor : Colors.transparent,
+          color: isSelected ? context.primaryColor : Colors.transparent,
           borderRadius: BorderRadius.circular(20.r),
           border: Border.all(
-            color: isSelected ? primaryColor : borderColor,
+            color: isSelected ? context.primaryColor : context.borderColor,
             width: 1,
           ),
         ),
@@ -36,7 +36,7 @@ class TransactionStatusWidget extends StatelessWidget {
           transactionStatusModel.title,
           style: Helper(context).textTheme.bodyLarge?.copyWith(
                 fontSize: 14.sp,
-                color: isSelected ? white : greyText,
+                color: isSelected ? white : context.greyText,
               ),
         ),
       );

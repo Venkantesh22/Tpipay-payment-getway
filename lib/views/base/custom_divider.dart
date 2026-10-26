@@ -21,12 +21,15 @@ class CustomDivider extends StatelessWidget {
       child: Container(
         height: thickness,
         decoration: BoxDecoration(
-          gradient: LinearGradient(begin: Alignment.topLeft, end: Alignment.bottomRight, colors: [
-            Colors.white,
-            color ?? Theme.of(context).primaryColor,
-            Colors.white,
-            //darkPink
-          ]),
+          gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                Colors.white,
+                color ?? Theme.of(context).primaryColor,
+                Colors.white,
+                //darkPink
+              ]),
         ),
       ),
     );

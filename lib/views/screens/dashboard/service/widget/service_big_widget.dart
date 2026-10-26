@@ -16,7 +16,7 @@ class ServiceBigWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(14.w),
-      decoration: containerDecoration,
+      decoration: context.containerDecoration,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -28,7 +28,7 @@ class ServiceBigWidget extends StatelessWidget {
                 index: index,
                 showName: false,
               ),
-               Icon(
+              Icon(
                 Icons.arrow_forward_ios_rounded,
                 color: grey,
                 size: 20.sp,
@@ -49,7 +49,7 @@ class ServiceBigWidget extends StatelessWidget {
             style: Helper(context)
                 .textTheme
                 .bodyMedium
-                ?.copyWith(fontSize: 11.sp, color: greyText),
+                ?.copyWith(fontSize: 11.sp, color: context.greyText),
           ),
         ],
       ),
