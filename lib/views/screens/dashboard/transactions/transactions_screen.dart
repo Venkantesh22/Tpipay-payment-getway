@@ -1,8 +1,8 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:vlr/controllers/transaction_controller.dart';
+
 import 'package:vlr/services/constants.dart';
 import 'package:vlr/services/custom_text.dart';
 import 'package:vlr/services/theme.dart';
@@ -44,7 +44,7 @@ class TransactionsScreen extends StatelessWidget {
             sizedBoxHeight(height: 20.h),
             searchBarAndFilterButton(),
             sizedBoxHeight(height: 28.h),
-           const  Expanded(child: TransactionListSection())
+            const Expanded(child: TransactionListSection())
           ],
         ),
       ),
@@ -60,9 +60,7 @@ class TransactionsScreen extends StatelessWidget {
                 controller: transactionController.transactionSearchController,
                 hindText: "Search by name, ID or amount...",
                 textInputAction: TextInputAction.search,
-                onFieldSubmitted: (value){
-                 
-                },
+                onFieldSubmitted: (value) {},
                 preFixWidget: Icon(
                   Icons.search,
                   color: grey,
