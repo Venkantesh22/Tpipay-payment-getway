@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vlr/services/constants.dart';
@@ -13,10 +15,12 @@ enum TransactionStatus {
 
 class TransactionStatusWidget extends StatelessWidget {
   final TransactionStatus status;
+  final double? fontSize;
 
   const TransactionStatusWidget({
     super.key,
     required this.status,
+    this.fontSize,
   });
 
   @override
@@ -39,7 +43,7 @@ class TransactionStatusWidget extends StatelessWidget {
   Widget _successTransaction(BuildContext context) {
     return _buildStatus(
       context,
-      title: "Success",
+      title: "Successful",
       color: successColor,
     );
   }
@@ -89,7 +93,7 @@ class TransactionStatusWidget extends StatelessWidget {
       child: CustomText(
         title,
         style: Helper(context).textTheme.titleSmall?.copyWith(
-              fontSize: 10.sp,
+              fontSize: fontSize ?? 10.sp,
               color: color,
             ),
       ),

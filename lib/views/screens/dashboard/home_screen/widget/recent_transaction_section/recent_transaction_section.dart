@@ -5,6 +5,7 @@ import 'package:vlr/controllers/dashboard_controller.dart';
 import 'package:vlr/services/constants.dart';
 import 'package:vlr/services/custom_text.dart';
 import 'package:vlr/views/screens/dashboard/home_screen/widget/recent_transaction_section/transaction_short_widget.dart';
+import 'package:vlr/views/screens/transaction_details/transaction_details_screen.dart';
 import 'package:vlr/views/widget/view_all_widget/view_all_widget.dart';
 
 class RecentTransactionsSection extends StatelessWidget {
@@ -39,7 +40,14 @@ class RecentTransactionsSection extends StatelessWidget {
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) {
-              return const TransactionShotWidget();
+              return GestureDetector(
+                  onTap: () {
+                    navigate(
+                      context: context,
+                      page: const TransactionDetailsScreen(),
+                    );
+                  },
+                  child: const TransactionShotWidget());
             },
             separatorBuilder: (_, __) {
               return sizedBoxHeight(height: 26.h);
