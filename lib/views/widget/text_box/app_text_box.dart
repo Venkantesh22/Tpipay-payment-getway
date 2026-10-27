@@ -128,17 +128,15 @@ class _AppTextFieldWithHeadingState extends State<AppTextFieldWithHeading> {
         if (widget.heading != null || widget.headingWidget != null) ...[
           Row(
             children: [
-              Expanded(
-                child: widget.headingWidget ??
-                    Text(
-                      widget.heading!,
-                      style: theme.textTheme.bodyMedium?.copyWith(
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w600,
-                        color: colorScheme.onSurface,
-                      ),
+              widget.headingWidget ??
+                  Text(
+                    widget.heading!,
+                    style: theme.textTheme.bodyMedium?.copyWith(
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w600,
+                      color: colorScheme.onSurface,
                     ),
-              ),
+                  ),
               SizedBox(width: 4.w),
               if (widget.isRequired)
                 Text(
