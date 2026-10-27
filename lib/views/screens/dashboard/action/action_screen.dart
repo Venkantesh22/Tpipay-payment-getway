@@ -7,6 +7,7 @@ import 'package:vlr/views/base/custom_button.dart';
 import 'package:vlr/views/screens/dashboard/action/widget/account_section.dart';
 import 'package:vlr/views/screens/dashboard/action/widget/heading_text_widget.dart';
 import 'package:vlr/views/screens/dashboard/action/widget/profile_info_section.dart';
+import 'package:vlr/views/screens/dashboard/action/widget/setting_section.dart';
 import 'package:vlr/views/screens/dashboard/action/widget/supper_section.dart';
 import 'package:vlr/views/screens/dashboard/home_screen/widget/appbar_widget.dart';
 
@@ -27,6 +28,10 @@ class ActionScreen extends StatelessWidget {
               const HeadingTextWidget(title: "Account & Verification"),
               sizedBoxHeight(height: 8),
               const AccountSection(),
+              sizedBoxHeight(height: 18),
+              const HeadingTextWidget(title: "App Setting"),
+              sizedBoxHeight(height: 8),
+              const SettingSection(),
               sizedBoxHeight(height: 18),
               const HeadingTextWidget(title: "Support & Legal"),
               sizedBoxHeight(height: 8),

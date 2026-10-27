@@ -93,6 +93,9 @@ List<AccountWidgetModel> supportWidgetModelList = [
       iconData: Icons.policy, title: "Terms & Conditions", onTap: () {}),
   AccountWidgetModel(
       iconData: Icons.privacy_tip, title: "Privacy Policy", onTap: () {}),
-  // AccountWidgetModel(
-  //     iconData: Icons.business_center, title: "Business Details", onTap: () {}),
+];
+
+List<AccountWidgetModel> settingWidgetModelList = [
+  AccountWidgetModel(iconData: Icons.palette, title: "App theme", onTap: () {}),
+  AccountWidgetModel(iconData: Icons.info, title: "About us", onTap: () {}),
 ];
