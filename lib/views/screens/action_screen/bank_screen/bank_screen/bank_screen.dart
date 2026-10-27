@@ -4,8 +4,8 @@ import 'package:vlr/services/constants.dart';
 import 'package:vlr/services/custom_text.dart';
 import 'package:vlr/services/theme.dart';
 import 'package:vlr/views/base/custom_button.dart';
-import 'package:vlr/views/screens/bank_screen/add_new_bank_screen/add_new_bank_screen.dart';
-import 'package:vlr/views/screens/bank_screen/bank_screen/widget/bank_widget.dart';
+import 'package:vlr/views/screens/action_screen/bank_screen/add_new_bank_screen/add_new_bank_screen.dart';
+import 'package:vlr/views/screens/action_screen/bank_screen/bank_screen/widget/bank_widget.dart';
 import 'package:vlr/views/widget/appbar/appbar2.dart';
 
 class BankScreen extends StatelessWidget {

@@ -4,7 +4,7 @@ import 'package:vlr/services/constants.dart';
 import 'package:vlr/services/custom_text.dart';
 import 'package:vlr/services/theme.dart';
 import 'package:vlr/views/screens/action_screen/app_setting_screen/theme_settings_screen/theme_settings_screen.dart';
-import 'package:vlr/views/screens/bank_screen/bank_screen/bank_screen.dart';
+import 'package:vlr/views/screens/action_screen/bank_screen/bank_screen/bank_screen.dart';
 
 class AccountWidget extends StatelessWidget {
   final AccountWidgetModel accountWidgetModel;
