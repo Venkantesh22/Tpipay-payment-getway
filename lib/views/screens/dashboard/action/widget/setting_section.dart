@@ -11,6 +11,7 @@ class SettingSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final list = settingWidgetModelList(context: context);
     return Container(
       padding: EdgeInsets.all(14.w),
       decoration: context.containerDecoration,
@@ -18,12 +19,13 @@ class SettingSection extends StatelessWidget {
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (context, index) {
-            AccountWidgetModel accountWidgetModel =
-                settingWidgetModelList[index];
-            return AccountWidget(accountWidgetModel: accountWidgetModel);
+            AccountWidgetModel accountWidgetModel = list[index];
+            return GestureDetector(
+                onTap: accountWidgetModel.onTap,
+                child: AccountWidget(accountWidgetModel: accountWidgetModel));
           },
           separatorBuilder: (_, __) => sizedBoxHeight(height: 24),
-          itemCount: settingWidgetModelList.length),
+          itemCount: list.length),
     );
   }
 }

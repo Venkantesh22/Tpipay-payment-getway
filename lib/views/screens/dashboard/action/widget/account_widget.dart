@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vlr/services/constants.dart';
 import 'package:vlr/services/custom_text.dart';
 import 'package:vlr/services/theme.dart';
+import 'package:vlr/views/screens/action_screen/app_setting_screen/theme_settings_screen/theme_settings_screen.dart';
 import 'package:vlr/views/screens/bank_screen/bank_screen/bank_screen.dart';
 
 class AccountWidget extends StatelessWidget {
@@ -95,7 +96,14 @@ List<AccountWidgetModel> supportWidgetModelList = [
       iconData: Icons.privacy_tip, title: "Privacy Policy", onTap: () {}),
 ];
 
-List<AccountWidgetModel> settingWidgetModelList = [
-  AccountWidgetModel(iconData: Icons.palette, title: "App theme", onTap: () {}),
-  AccountWidgetModel(iconData: Icons.info, title: "About us", onTap: () {}),
-];
+List<AccountWidgetModel> settingWidgetModelList(
+        {required BuildContext context}) =>
+    [
+      AccountWidgetModel(
+          iconData: Icons.palette,
+          title: "App theme",
+          onTap: () {
+            navigate(context: context, page: const ThemeSettingsScreen());
+          }),
+      AccountWidgetModel(iconData: Icons.info, title: "About us", onTap: () {}),
+    ];
