@@ -2,9 +2,11 @@ import 'dart:developer';
 import 'package:get/instance_manager.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vlr/controllers/auth_controller.dart';
+import 'package:vlr/controllers/bank_controller.dart';
 import 'package:vlr/controllers/basic_controller.dart';
 import 'package:vlr/controllers/dashboard_controller.dart';
 import 'package:vlr/controllers/transaction_controller.dart';
+import 'package:vlr/data/repositories/bank_repo.dart';
 
 import '../controllers/permission_controller.dart';
 import '../data/api/api_client.dart';
@@ -29,20 +31,17 @@ class Init {
       Get.lazyPut(
           () => AuthRepo(sharedPreferences: Get.find(), apiClient: Get.find()));
       Get.lazyPut(() => BasicRepo(dioClient: Get.find()));
-   
+      Get.lazyPut(() => BankRepo(apiClient: Get.find()));
+
       // Get Controller's...
 
-      Get.lazyPut(
-          () => AuthController(authRepo: Get.find()));
-      Get.lazyPut(
-          () => DashBoardController());
-      Get.lazyPut(
-          () => BasicController(basicRepo: Get.find()));
-      Get.lazyPut(
-          () => TransactionController(
-            // basicRepo: Get.find()
+      Get.lazyPut(() => AuthController(authRepo: Get.find()));
+      Get.lazyPut(() => DashBoardController());
+      Get.lazyPut(() => BasicController(basicRepo: Get.find()));
+      Get.lazyPut(() => TransactionController(
+          // basicRepo: Get.find()
           ));
-    
+      Get.lazyPut(() => BankController(bankRepo: Get.find()));
     } catch (e) {
       log('---- ${e.toString()} ----', name: "ERROR AT initialize()");
     }

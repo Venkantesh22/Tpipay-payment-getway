@@ -1780,22 +1780,8 @@ extension AppThemeColors on BuildContext {
 
   Color get green =>
       isDarkTheme ? const Color(0xFF6EE7B7) : const Color(0xFF006C49);
-
-  Color get green2 =>
-      isDarkTheme ? const Color(0xFF4ADE80) : const Color(0xFF0E9A41);
-
-  Color get greenDark =>
-      isDarkTheme ? const Color(0xFF5EEAD4) : const Color(0xFF006A61);
-
-  Color get greenDark1 => greenDark;
-
-  Color get greenDark2 =>
-      isDarkTheme ? const Color(0xFF86EFAC) : const Color(0xFF1E7E34);
-
-  Color get greenLight =>
-      isDarkTheme ? const Color(0xFF86EFAC) : const Color(0xFF108548);
-
-  Color get greenLight1 => greenLight;
+  Color get green1 =>
+      isDarkTheme ? const Color(0xFF6EE7B7) : const Color(0xFF059669);
 
   Color get yellow =>
       isDarkTheme ? const Color(0xFFFBBF24) : const Color(0xFFF59E0B);

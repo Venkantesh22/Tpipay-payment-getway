@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vlr/services/constants.dart';
 import 'package:vlr/services/custom_text.dart';
 import 'package:vlr/services/theme.dart';
+import 'package:vlr/views/screens/bank_screen/bank_screen/bank_screen.dart';
 
 class AccountWidget extends StatelessWidget {
   final AccountWidgetModel accountWidgetModel;
@@ -62,16 +63,26 @@ class AccountWidgetModel {
       this.lastWidget});
 }
 
-List<AccountWidgetModel> accountWidgetModelList = [
-  AccountWidgetModel(
-      iconData: Icons.account_balance, title: "Bank Accounts", onTap: () {}),
-  AccountWidgetModel(
-      iconData: Icons.edit_document, title: "Company Documents", onTap: () {}),
-  AccountWidgetModel(
-      iconData: Icons.security, title: "KYC Verification", onTap: () {}),
-  AccountWidgetModel(
-      iconData: Icons.business_center, title: "Business Details", onTap: () {}),
-];
+List<AccountWidgetModel> accountWidgetModelList(
+        {required BuildContext context}) =>
+    [
+      AccountWidgetModel(
+          iconData: Icons.account_balance,
+          title: "Bank Accounts",
+          onTap: () {
+            navigate(context: context, page: const BankScreen());
+          }),
+      AccountWidgetModel(
+          iconData: Icons.edit_document,
+          title: "Company Documents",
+          onTap: () {}),
+      AccountWidgetModel(
+          iconData: Icons.security, title: "KYC Verification", onTap: () {}),
+      AccountWidgetModel(
+          iconData: Icons.business_center,
+          title: "Business Details",
+          onTap: () {}),
+    ];
 
 List<AccountWidgetModel> supportWidgetModelList = [
   AccountWidgetModel(
