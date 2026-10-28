@@ -208,7 +208,7 @@ class RegisterScreen extends StatelessWidget {
                       }
                       navigate(
                           context: context,
-                          page: OtpVerificationScreen(
+                          page: const OtpVerificationScreen(
                               otpSendOn: "+91 1234567890"));
                     },
                     child: Row(
@@ -217,14 +217,15 @@ class RegisterScreen extends StatelessWidget {
                         CustomText(
                           "Create Account",
                           textAlign: TextAlign.center,
-                          style: Helper(context)
-                              .textTheme
-                              .bodyMedium
-                              ?.copyWith(fontSize: 16.sp),
+                          style: Helper(context).textTheme.bodyMedium?.copyWith(
+                                fontSize: 16.sp,
+                                color: white,
+                              ),
                         ),
                         sizedBoxWidth(width: 16),
                         const Icon(
                           Icons.arrow_forward,
+                          color: white,
                         )
                       ],
                     ),

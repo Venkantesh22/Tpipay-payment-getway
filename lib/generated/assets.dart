@@ -6,6 +6,14 @@ class Assets {
   /// assets/images/banner1.png
   static const String imagesBanner1 = "assets/images/banner1.png";
 
+  /// Assets for imagesCheckForgetPassword
+  /// assets/images/check-forget-password.png
+  static const String imagesCheckForgetPassword = "assets/images/check-forget-password.png";
+
+  /// Assets for imagesCheckForgetPasswordDt
+  /// assets/images/check-forget-password_dt.png
+  static const String imagesCheckForgetPasswordDt = "assets/images/check-forget-password_dt.png";
+
   /// Assets for imagesCheckSuccess
   /// assets/images/Check-Success.png
   static const String imagesCheckSuccess = "assets/images/Check-Success.png";
@@ -13,6 +21,22 @@ class Assets {
   /// Assets for imagesDynamicQr
   /// assets/images/dynamic-qr.svg
   static const String imagesDynamicQr = "assets/images/dynamic-qr.svg";
+
+  /// Assets for imagesEmailForgetPassword
+  /// assets/images/email-forget-password.png
+  static const String imagesEmailForgetPassword = "assets/images/email-forget-password.png";
+
+  /// Assets for imagesEmailForgetPasswordDt
+  /// assets/images/email-forget-password_dt.png
+  static const String imagesEmailForgetPasswordDt = "assets/images/email-forget-password_dt.png";
+
+  /// Assets for imagesLockForgetPassword
+  /// assets/images/lock-forget-password.png
+  static const String imagesLockForgetPassword = "assets/images/lock-forget-password.png";
+
+  /// Assets for imagesLockForgetPasswordDt
+  /// assets/images/lock-forget-password_dt.png
+  static const String imagesLockForgetPasswordDt = "assets/images/lock-forget-password_dt.png";
 
   /// Assets for imagesLogo
   /// assets/images/logo.png
@@ -33,6 +57,14 @@ class Assets {
   /// Assets for imagesNoProfile
   /// assets/images/no-profile.png
   static const String imagesNoProfile = "assets/images/no-profile.png";
+
+  /// Assets for imagesOtpForgetPassword
+  /// assets/images/otp-forget-password.png
+  static const String imagesOtpForgetPassword = "assets/images/otp-forget-password.png";
+
+  /// Assets for imagesOtpForgetPasswordDt
+  /// assets/images/otp-forget-password_dt.png
+  static const String imagesOtpForgetPasswordDt = "assets/images/otp-forget-password_dt.png";
 
   /// Assets for imagesPlaceholder
   /// assets/images/placeholder.jpg

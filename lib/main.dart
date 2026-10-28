@@ -113,11 +113,11 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
         },
 
         // Keep your existing home screen.
-        child: const DashboardScreen(),
+        // child: const DashboardScreen(),
 
         // Other screens for testing:
         // child: const LoginScreen(),
-        // child: const SplashScreen(),
+        child: const SplashScreen(),
         // child: const OtpVerificationScreen(
         //   otpSendOn: "1234567890",
         // ),
