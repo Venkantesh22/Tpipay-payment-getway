@@ -13,6 +13,8 @@ import 'package:vlr/services/theme.dart';
 import 'package:vlr/views/base/custom_button.dart';
 import 'package:vlr/views/base/custom_image.dart';
 import 'package:vlr/views/screens/auth_screens/forget_password/enter_email_screen/forget_flow_screen.dart';
+import 'package:vlr/views/screens/auth_screens/forget_password/successfully_screen/successfully_screen.dart';
+import 'package:vlr/views/screens/auth_screens/login_screen.dart';
 import 'package:vlr/views/widget/text_box/app_text_box.dart';
 
 class OtpScreen extends StatefulWidget {
@@ -259,6 +261,7 @@ class _OtpScreenState extends State<OtpScreen> {
     );
   }
 
+//* Verify OTP button and Create new Password screen UI
   CustomButton verifyOpt(BuildContext context, AuthController authController) {
     return CustomButton(
       height: 65.h,
@@ -335,7 +338,22 @@ class _OtpScreenState extends State<OtpScreen> {
                   radius: 16.r,
                   gradient: context.buttonGradient,
                   onTap: () {
-                    navigate(context: context, page: const OtpScreen());
+                    navigate(
+                      context: context,
+                      page: SuccessfullyScreen(
+                        buttonTitle: "Go to Login",
+                        title: "Password Updated Successfully!",
+                        subTitle:
+                            "Your password has been reset successfully. You can now login with your new password.",
+                        onTap: () {
+                          navigate(
+                            context: context,
+                            isRemoveUntil: true,
+                            page: const LoginScreen(),
+                          );
+                        },
+                      ),
+                    );
                   },
                   child: CustomText(
                     "Update Password",

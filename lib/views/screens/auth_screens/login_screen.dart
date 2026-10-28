@@ -10,7 +10,7 @@ import 'package:vlr/services/theme.dart';
 import 'package:vlr/views/base/custom_button.dart';
 import 'package:vlr/views/base/custom_image.dart';
 import 'package:vlr/views/screens/auth_screens/forget_password/enter_email_screen/forget_flow_screen.dart';
-import 'package:vlr/views/screens/auth_screens/forget_password/enter_email_screen/otp_screen.dart';
+import 'package:vlr/views/screens/auth_screens/forget_password/otp_screen/otp_screen.dart';
 import 'package:vlr/views/screens/auth_screens/register_screen.dart';
 import 'package:vlr/views/screens/dashboard/dashboard_screen.dart';
 import 'package:vlr/views/widget/text_box/app_text_box.dart';
