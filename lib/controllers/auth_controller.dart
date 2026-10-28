@@ -28,6 +28,7 @@ class AuthController extends GetxController implements GetxService {
   TextEditingController companyNameController = TextEditingController();
   TextEditingController mobileController = TextEditingController();
   TextEditingController confirmPasswordController = TextEditingController();
+  TextEditingController optController = TextEditingController();
 
   // Future<ResponseModel> generatedOtp({required String phone}) async {
   //   log('----------- generatedOtp Called ----------');
@@ -163,6 +164,7 @@ class AuthController extends GetxController implements GetxService {
     companyNameController.dispose();
     mobileController.dispose();
     confirmPasswordController.dispose();
+    optController.dispose();
     super.dispose();
   }
 

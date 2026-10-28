@@ -10,6 +10,7 @@ import 'package:vlr/services/theme.dart';
 import 'package:vlr/views/base/custom_button.dart';
 import 'package:vlr/views/base/custom_image.dart';
 import 'package:vlr/views/screens/auth_screens/forget_password/enter_email_screen/forget_flow_screen.dart';
+import 'package:vlr/views/screens/auth_screens/forget_password/enter_email_screen/otp_screen.dart';
 import 'package:vlr/views/screens/auth_screens/register_screen.dart';
 import 'package:vlr/views/screens/dashboard/dashboard_screen.dart';
 import 'package:vlr/views/widget/text_box/app_text_box.dart';
@@ -237,26 +238,7 @@ class LoginScreen extends StatelessWidget {
                       },
                     ),
                     sizedBoxHeight(height: 16),
-                    CustomButton(
-                      height: 65.h,
-                      radius: 16.r,
-                      gradient: context.buttonGradient,
-                      onTap: () {
-                        if (authController.isLoading) {
-                          return showToast(message: "Please wait..");
-                        }
-                        // navigate(
-                        //     context: context, page: const DashboardScreen());
-                      },
-                      child: CustomText(
-                        "Send OTP",
-                        textAlign: TextAlign.center,
-                        style: Helper(context).textTheme.bodyMedium?.copyWith(
-                              fontSize: 16.sp,
-                              color: white,
-                            ),
-                      ),
-                    ),
+                    _sentOtpButton(context, authController),
                     Padding(
                       padding: EdgeInsets.symmetric(
                         vertical: 24.h,
@@ -335,6 +317,27 @@ class LoginScreen extends StatelessWidget {
           ),
         )
       ],
+    );
+  }
+
+//* Send OTP button and UI screen of Enter verification code
+  CustomButton _sentOtpButton(
+      BuildContext context, AuthController authController) {
+    return CustomButton(
+      height: 65.h,
+      radius: 16.r,
+      gradient: context.buttonGradient,
+      onTap: () {
+        navigate(context: context, page: const OtpScreen());
+      },
+      child: CustomText(
+        "Send OTP",
+        textAlign: TextAlign.center,
+        style: Helper(context).textTheme.bodyMedium?.copyWith(
+              fontSize: 16.sp,
+              color: white,
+            ),
+      ),
     );
   }
 }

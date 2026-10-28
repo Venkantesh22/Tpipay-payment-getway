@@ -9,7 +9,6 @@ import 'package:vlr/services/constants.dart';
 import 'package:vlr/services/theme.dart';
 import 'package:vlr/views/screens/action_screen/app_setting_screen/theme_settings_screen/widget/app_theme_preference.dart';
 import 'package:vlr/views/screens/auth_screens/login_screen.dart';
-import 'package:vlr/views/screens/auth_screens/opt_verification_screen.dart';
 import 'package:vlr/views/screens/auth_screens/register_screen.dart';
 import 'package:vlr/views/screens/dashboard/dashboard_screen.dart';
 

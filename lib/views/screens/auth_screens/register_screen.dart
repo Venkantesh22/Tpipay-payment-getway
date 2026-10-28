@@ -10,8 +10,8 @@ import 'package:vlr/services/custom_text.dart';
 import 'package:vlr/services/theme.dart';
 import 'package:vlr/views/base/custom_button.dart';
 import 'package:vlr/views/base/custom_image.dart';
+import 'package:vlr/views/screens/auth_screens/forget_password/enter_email_screen/otp_screen.dart';
 import 'package:vlr/views/screens/auth_screens/login_screen.dart';
-import 'package:vlr/views/screens/auth_screens/opt_verification_screen.dart';
 import 'package:vlr/views/widget/text_box/app_text_box.dart';
 
 class RegisterScreen extends StatelessWidget {
@@ -206,10 +206,7 @@ class RegisterScreen extends StatelessWidget {
                       if (authController.isLoading) {
                         return showToast(message: "Please wait..");
                       }
-                      navigate(
-                          context: context,
-                          page: const OtpVerificationScreen(
-                              otpSendOn: "+91 1234567890"));
+                      navigate(context: context, page: const OtpScreen());
                     },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
