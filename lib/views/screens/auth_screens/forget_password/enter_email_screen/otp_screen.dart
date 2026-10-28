@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:pinput/pinput.dart';
 import 'package:vlr/controllers/auth_controller.dart';
@@ -11,6 +12,8 @@ import 'package:vlr/services/custom_text.dart';
 import 'package:vlr/services/theme.dart';
 import 'package:vlr/views/base/custom_button.dart';
 import 'package:vlr/views/base/custom_image.dart';
+import 'package:vlr/views/screens/auth_screens/forget_password/enter_email_screen/forget_flow_screen.dart';
+import 'package:vlr/views/widget/text_box/app_text_box.dart';
 
 class OtpScreen extends StatefulWidget {
   const OtpScreen({
@@ -121,7 +124,7 @@ class _OtpScreenState extends State<OtpScreen> {
                       overflow: TextOverflow.clip,
                       text: TextSpan(
                           text:
-                              "We have sent a 6-digit verification code to your email address",
+                              "We have sent a 6-digit verification code to your email address ",
                           style: Helper(context).textTheme.bodyMedium?.copyWith(
                                 fontSize: 12.sp,
                                 color: context.greyText,
@@ -182,26 +185,7 @@ class _OtpScreenState extends State<OtpScreen> {
                             ),
                     ),
                     sizedBoxHeight(height: 20),
-                    CustomButton(
-                      height: 65.h,
-                      radius: 16.r,
-                      gradient: context.buttonGradient,
-                      onTap: () {
-                        if (authController.isLoading) {
-                          return showToast(message: "Please wait..");
-                        }
-                        // navigate(
-                        //     context: context, page: const DashboardScreen());
-                      },
-                      child: CustomText(
-                        "Verify OTP",
-                        textAlign: TextAlign.center,
-                        style: Helper(context).textTheme.bodyMedium?.copyWith(
-                              fontSize: 16.sp,
-                              color: white,
-                            ),
-                      ),
-                    ),
+                    verifyOpt(context, authController),
                     Padding(
                       padding: EdgeInsets.symmetric(
                         vertical: 24.h,
@@ -272,6 +256,109 @@ class _OtpScreenState extends State<OtpScreen> {
           ),
         );
       }),
+    );
+  }
+
+  CustomButton verifyOpt(BuildContext context, AuthController authController) {
+    return CustomButton(
+      height: 65.h,
+      radius: 16.r,
+      gradient: context.buttonGradient,
+      onTap: () {
+        if (authController.isLoading) {
+          return showToast(message: "Please wait..");
+        }
+        navigate(
+          context: context,
+          page: ForgetFlowScreen(
+            image: context.imageLock,
+            widget: Column(
+              children: [
+                sizedBoxHeight(height: 20),
+                CustomText(
+                  "Create New Password",
+                  style: Helper(context).textTheme.titleSmall?.copyWith(
+                        fontSize: 24.sp,
+                      ),
+                ),
+                sizedBoxHeight(height: 8),
+                CustomText(
+                  "Set a new password for your account.",
+                  textAlign: TextAlign.center,
+                  overflow: TextOverflow.clip,
+                  style: Helper(context).textTheme.bodyMedium?.copyWith(
+                        fontSize: 12.sp,
+                        color: context.greyText,
+                      ),
+                ),
+                sizedBoxHeight(height: 28),
+                AppTextFieldWithHeading(
+                  controller: authController.passwordController,
+                  obscureText: true,
+                  heading: "New Password",
+                  preFixWidget: Padding(
+                    padding: EdgeInsets.all(12.w),
+                    child: SvgPicture.asset(Assets.svgsLock),
+                  ),
+                  hindText: "New Password",
+                  textInputAction: TextInputAction.done,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your New Password';
+                    }
+                    return null;
+                  },
+                ),
+                sizedBoxHeight(height: 16),
+                AppTextFieldWithHeading(
+                  controller: authController.confirmPasswordController,
+                  preFixWidget: Padding(
+                    padding: EdgeInsets.all(12.w),
+                    child: SvgPicture.asset(Assets.svgsLock),
+                  ),
+                  hindText: "Confirm password",
+                  heading: "Confirm password",
+                  textInputAction: TextInputAction.done,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your confirm password';
+                    }
+                    if (value != authController.passwordController.text) {
+                      return 'Confirm do not match with password';
+                    }
+                    return null;
+                  },
+                ),
+                sizedBoxHeight(height: 24),
+                CustomButton(
+                  height: 65.h,
+                  radius: 16.r,
+                  gradient: context.buttonGradient,
+                  onTap: () {
+                    navigate(context: context, page: const OtpScreen());
+                  },
+                  child: CustomText(
+                    "Update Password",
+                    textAlign: TextAlign.center,
+                    style: Helper(context).textTheme.bodyMedium?.copyWith(
+                          fontSize: 16.sp,
+                          color: white,
+                        ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+      child: CustomText(
+        "Verify OTP",
+        textAlign: TextAlign.center,
+        style: Helper(context).textTheme.bodyMedium?.copyWith(
+              fontSize: 16.sp,
+              color: white,
+            ),
+      ),
     );
   }
 }
