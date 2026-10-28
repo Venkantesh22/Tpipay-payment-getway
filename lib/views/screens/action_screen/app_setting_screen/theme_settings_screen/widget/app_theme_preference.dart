@@ -6,7 +6,7 @@ class AppThemePreference {
 
   // Notifies MaterialApp when the theme changes.
   static final ValueNotifier<ThemeMode> themeModeNotifier =
-      ValueNotifier<ThemeMode>(ThemeMode.dark);
+      ValueNotifier<ThemeMode>(ThemeMode.system);
 
   static Future<ThemeMode> load() async {
     final prefs = await SharedPreferences.getInstance();
